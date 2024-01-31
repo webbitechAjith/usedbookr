@@ -103,21 +103,11 @@ function Home() {
   // const firstThreeProducts = allplantsDetails.slice(0, 3);
   useEffect(() => {
     plantproduct();
-    // const timer = setTimeout(() => {
-    //   setShowPopUp(false);
-    // }, 5000);
-    //  // I will be deleted while component is unmounting.
-    //  return () => clearTimeout(timer) 
-
   }, [])
-  // let popup = null;
-  // if(showPopUp) {
-  //   popup = <PopUp />;
-  //  }
   return (
     <div>
       {/* {popup} */}
-      <Popup />
+      {/* <Popup /> */}
       <Header />
 
       <section className='pt-3'>
@@ -287,19 +277,19 @@ function Home() {
               <h3 className='w-50'>100% Trusted Book Store</h3>
               <div className='row m-0'>
                 <div className='col-1 p-0'>
-                  <span className='circle'><FontAwesomeIcon icon={faCheck} style={{ color: '#FFF' }} /></span>
+                  <span className='circle'><FontAwesomeIcon icon={faCheck} style={{ color: '#574AC9' }} /></span>
                 </div>
                 <div className='col-11 p-0'>
                   <h4>Ut quis tempus erat. Phasellus euismod bibendum.</h4>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
                 </div>
                 <div className='col-1 p-0'>
-                  <span className='circle'><FontAwesomeIcon icon={faCheck} style={{ color: '#FFF' }} /></span>
+                  <span className='circle'><FontAwesomeIcon icon={faCheck} style={{ color: '#574AC9' }} /></span>
                 </div>
                 <div className='col-11 p-0'>
                   <h4>Ut quis tempus erat. Phasellus euismod bibendum.</h4>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-                  <button>Shop Now <FontAwesomeIcon icon={faArrowRight} style={{ color: '#30844A' }} className='ps-2' /></button>
+                  <button>Shop Now <FontAwesomeIcon icon={faArrowRight} style={{ color: '#241D60' }} className='ps-2' /></button>
                 </div>
               </div>
             </div>
@@ -308,7 +298,7 @@ function Home() {
         <div className='container-90'>
           <div className='pots-section mt-5'>
             <span className='product-title'>Best Sellers in Comics</span>
-            <span className='float-end viewall'>View All<FontAwesomeIcon icon={faArrowRight} style={{ color: '#30844A' }} className='ps-2' /></span>
+            <span className='float-end viewall'>View All<FontAwesomeIcon icon={faArrowRight} style={{ color: '#241D60' }} className='ps-2' /></span>
             <BestSeller />
           </div>
           <div className='best-seller mt-5'>

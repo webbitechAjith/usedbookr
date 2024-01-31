@@ -139,10 +139,34 @@ function Aside() {
                         <div className="accordion-item border-0">
                             <h2 className="accordion-header">
                                 <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <b>Language</b>
+                                    <b>Condition</b>
                                 </button>
                             </h2>
                             <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div className="accordion-body">
+                                    <div className="mb-3 form-check">
+                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                        <label className="form-check-label" for="exampleCheck1">Good (13)</label>
+                                    </div>
+                                    <div className="mb-3 form-check">
+                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                        <label className="form-check-label" for="exampleCheck1">Very Good (15)</label>
+                                    </div>
+                                    <div className="mb-3 form-check">
+                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                        <label className="form-check-label" for="exampleCheck1">Well Read (22)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr className='m-0' />
+                        <div className="accordion-item border-0">
+                            <h2 className="accordion-header">
+                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                                    <b>Language</b>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div className="accordion-body">
                                     {items.slice(0, showAll ? items.length : 3).map((item, index) => (
                                         <div className="mb-3 form-check">
@@ -163,11 +187,11 @@ function Aside() {
                         <hr className='m-0' />
                         <div className="accordion-item border-0">
                             <h2 className="accordion-header">
-                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
                                     <b>Binding Type</b>
                                 </button>
                             </h2>
-                            <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div id="collapseFour" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div className="accordion-body">
                                     <div className="mb-3 form-check">
                                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
@@ -187,11 +211,11 @@ function Aside() {
                         <hr className='m-0' />
                         <div className="accordion-item border-0">
                             <h2 className="accordion-header">
-                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
                                     <b>Latest Arrivals</b>
                                 </button>
                             </h2>
-                            <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div id="collapseFive" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div className="accordion-body">
                                     <div className="mb-3 form-check">
                                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
@@ -211,11 +235,11 @@ function Aside() {
                         <hr className='m-0' />
                         <div className="accordion-item border-0">
                             <h2 className="accordion-header">
-                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
                                     <b>Price</b>
                                 </button>
                             </h2>
-                            <div id="collapseThree" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div id="collapseSix" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                 <div className='container-90'>
                                     <Slider
                                         value={value}
@@ -229,11 +253,11 @@ function Aside() {
                         <hr className='m-0' />
                         <div className="accordion-item border-0">
                             <h2 className="accordion-header">
-                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour">
                                     <b>Rating</b>
                                 </button>
                             </h2>
-                            <div id="collapseFour" className="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div id="collapseSeven" className="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                 <div className="accordion-body">
                                     <div className="mb-3 form-check">
                                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
@@ -242,8 +266,8 @@ function Aside() {
                                             emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
                                             fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
                                             readonly={true}
-                                        /> <b>5.0</b>                                 
-                                        </div>
+                                        /> <b>5.0</b>
+                                    </div>
                                     <div className="mb-3 form-check">
                                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                                         <Rating
@@ -251,16 +275,16 @@ function Aside() {
                                             emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
                                             fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
                                             readonly={true}
-                                        /> <b>4.0 & up</b>                                 
+                                        /> <b>4.0 & up</b>
                                     </div>
                                     <div className="mb-3 form-check">
                                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                                         <Rating
                                             initialRating={3}
                                             emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
-                                            fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}  
+                                            fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
                                             readonly={true}
-                                        /> <b>3.0 & up</b>                                 
+                                        /> <b>3.0 & up</b>
                                     </div>
                                     <div className="mb-3 form-check">
                                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
@@ -269,7 +293,7 @@ function Aside() {
                                             emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
                                             fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
                                             readonly={true}
-                                        /> <b>2.0 & up</b>  
+                                        /> <b>2.0 & up</b>
                                     </div>
                                     <div className="mb-3 form-check">
                                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
@@ -278,7 +302,7 @@ function Aside() {
                                             emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
                                             fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
                                             readonly={true}
-                                        /> <b>1.0 & up</b>  
+                                        /> <b>1.0 & up</b>
                                     </div>
                                 </div>
                             </div>

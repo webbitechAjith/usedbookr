@@ -42,6 +42,7 @@
     height: 40px;
     color: #fff;
     border-radius: 50%;
+    background: #FFD731;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,8 +88,8 @@
     margin: 15px 20px;
     border-radius: 43px;
     border: none;
-    background: #056839;
-    color: #FFF;
+    background: #FFD731;
+    color: #241D60;
     font-size: 16px;
     font-weight: 600;
     line-height: 26px;
@@ -135,9 +136,9 @@
 
 .profile-address h6 {
     margin-top: 30px;
-    color: var(--branding-success, #00B207);
+    color: #241D60;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 26px;
 }
 
@@ -201,9 +202,9 @@
 }
 
 .order-card .finish {
-    color: #00AF07;
+    color: #241D60;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 26px;
 }
 
@@ -218,11 +219,11 @@
     padding: 10px 20px;
     border: none;
     border-radius: 43px;
-    background: #056839;
-    color: #FFF;
-    font-size: 12px;
+    background: #FFD731;
+    color: #241D60;
+    font-size: 14px;
     font-weight: 600;
-    line-height: 22px;
+    line-height: 24px;
 }
 
 /* history css end  */
@@ -381,12 +382,12 @@ thead th {
 .process-check {
     padding: 20px 50px !important;
     border-radius: 43px;
-    background: #056839 !important;
+    background: #FFD731 !important;
     border: none;
-    color: #FFF;
-    font-size: 16px;
+    color: #241D60 !important;
+    font-size: 16px !important;
     font-weight: 600;
-    line-height: 26px;
+    line-height: 26px !important;
 }
 
 /* puechase css end  */

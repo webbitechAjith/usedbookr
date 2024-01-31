@@ -6,10 +6,10 @@ import Useraside from '../Common/pages/Useraside'
 import '../Common/assets/css/profile.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faEdit, faPencil } from '@fortawesome/free-solid-svg-icons';
 
 import edit from '../Common/assets/image/edit.png';
-import ajith from '../Common/assets/image/ajith.jpeg'
+import profile from '../Common/assets/image/profile.png'
 
 function Profile() {
     return (
@@ -28,9 +28,10 @@ function Profile() {
                                 <div className='row m-0 pt-5'>
                                     <div className='col-3'>
                                         <div class="profile-container">
-                                            <img src={ajith} alt="Profile Image" class="profile-image" />
+                                            <img src={profile} alt="Profile Image" class="profile-image" />
                                                 <div class="edit-icon">
-                                                    <img src={edit} />
+                                                    {/* <img src={edit} /> */}
+                                                    <FontAwesomeIcon icon={faPencil} style={{color:'#000'}} />
                                                 </div>
                                         </div>
                                     </div>
@@ -68,7 +69,7 @@ function Profile() {
                                     </div>
                                 </div>
                                 <div className='text-end'>
-                                    <button>Update <FontAwesomeIcon icon={faArrowRight} style={{ color: '#FFF' }} className='ps-2' /></button>
+                                    <button>Update <FontAwesomeIcon icon={faArrowRight} style={{ color: '#241D60' }} className='ps-2' /></button>
                                 </div>
                             </div>
                         </div>

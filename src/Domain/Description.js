@@ -3,6 +3,8 @@ import Header from '../Common/pages/Header'
 import Footer from '../Common/pages/Footer'
 import { Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
 import axios from 'axios'
+import Rating from 'react-rating';
+
 
 import '../Common/assets/css/description.css'
 
@@ -14,11 +16,11 @@ import description1 from '../Common/assets/image/description1.png'
 import description2 from '../Common/assets/image/description2.png'
 import description3 from '../Common/assets/image/description3.png'
 import description4 from '../Common/assets/image/description4.png'
-import Rating from '../Common/assets/image/Rating.png'
+import star from '../Common/assets/image/Rating.png'
 import shop from '../Common/assets/image/white-shop.png'
 import blackshop from '../Common/assets/image/black-shop.png'
-import likes from '../Common/assets/image/like.png'
-import unlike from '../Common/assets/image/unlike.png'
+import likes from '../Common/assets/image/heart-like.png'
+import unlike from '../Common/assets/image/heart-unlike.png'
 import icon1 from '../Common/assets/image/footer-facebook.png'
 import icon2 from '../Common/assets/image/footer-twitter.png'
 import icon3 from '../Common/assets/image/footer-pinterest.png'
@@ -31,22 +33,71 @@ import arrive1 from '../Common/assets/image/arrive1.png'
 import seller1 from '../Common/assets/image/seller1.png'
 
 import { useNavigate, useParams } from 'react-router-dom';
-import { setallplantDetails,setproductIdDetails, setLikedProducts, setlikeProduct, setlikescount, setShopProducts, setshopcount, setsingleItemCount } from '../Redux/CreateSlice';
+import { setallplantDetails, setproductIdDetails, setLikedProducts, setlikeProduct, setlikescount, setShopProducts, setshopcount, setsingleItemCount } from '../Redux/CreateSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import BestSeller from '../Common/pages/BestSeller';
 
 function Description() {
     const { isLiked, isAdded, likedProducts, likescount, shopProducts, shopcount, productIdDetails, singleItemCount } = useSelector((state) => state.usedbookr_product)
     const [value, setValue] = useState(0);
+    const [showAll, setShowAll] = useState(false);
+    const [showLess, setShowLess] = useState(false);
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
+    const review = [
+        {
+            "author_name": "Tevita Taufoou",
+            "author_url": "https://www.google.com/maps/contrib/105937236918123663309/reviews",
+            "language": "en",
+            "profile_photo_url": "https://lh3.googleusercontent.com/a/AATXAJwZANdRSSg96QeZG--6BazG5uv_BJMIvpZGqwSz=s128-c0x00000000-cc-rp-mo",
+            "rating": 1,
+            "relative_time_description": "6 months ago",
+            "text": "I need help.  Google Australia is taking my money. Money I don't have any I am having trouble sorting this issue out",
+            "time": "2min",
+        },
+        {
+            "author_name": "Jordy Baker",
+            "author_url": "https://www.google.com/maps/contrib/102582237417399865640/reviews",
+            "language": "en",
+            "profile_photo_url": "https://lh3.googleusercontent.com/a/AATXAJwgg1tM4aVA4nJCMjlfJtHtFZuxF475Vb6tT74S=s128-c0x00000000-cc-rp-mo",
+            "rating": 3,
+            "relative_time_description": "4 months ago",
+            "text": "I have literally never been here in my life, I am 17 and they are taking money I don't have for no reason.\n\nThis is not ok. I have rent to pay and my own expenses to deal with and now this.",
+            "time": '25min',
+        },
+        {
+            "author_name": "Prem Rathod",
+            "author_url": "https://www.google.com/maps/contrib/115981614018592114142/reviews",
+            "language": "en",
+            "profile_photo_url": "https://lh3.googleusercontent.com/a/AATXAJyEQpqs4YvPPzMPG2dnnRTFPC4jxJfn8YXnm2gz=s128-c0x00000000-cc-rp-mo",
+            "rating": 4.5,
+            "relative_time_description": "4 months ago",
+            "text": "Terrible service. all reviews are fake and irrelevant. This is about reviewing google as business not the building/staff etc.",
+            "time": '1h 2mins',
+        },
+    ]
+    const showReview = () => {
+        setShowAll(!showAll);
+        setShowLess(!showLess)
+    };
+    const handleLessMore = () => {
+        setShowLess(!showLess)
+        setShowAll(!showAll);
+    };
     const params = useParams()
-    // const handleIncrement = () => {
-    //     setValue(value + 1);
-    // };
-    // const handleDecrement = () => {
-    //     setValue(value - 1);
-    // };
+    const handleIncrement = () => {
+        setValue(value + 1);
+        // const milliseconds = 1641389490 * 1000;
+
+        // const dateObject = new Date(milliseconds);
+
+        // // Get the minutes from the Date object
+        // const minutes = dateObject.getMinutes();
+        // console.log(minutes)
+    };
+    const handleDecrement = () => {
+        setValue(value - 1);
+    };
     // like product click fn 
     const totallikes = likedProducts.map((data) => data.id);
 
@@ -92,20 +143,20 @@ function Description() {
 
     }
     const product_remove = () => {
-  
+
     }
     const product_like = () => {
-      console.log("ajith")
+        console.log("ajith")
     }
     const all_product = () => {
-      navigate('/Allproduct')
+        navigate('/Allproduct')
     }
     const plantproduct = async () => {
-      // const { data } = await axios.get('https://webbitech.co.in/ecommerce/public/api/productlist');
-      //   dispatch(setallplantDetails(data.data))
-      const { data } = await axios.get('https://fakestoreapi.com/products');
-      dispatch(setallplantDetails(data.data))
-  
+        // const { data } = await axios.get('https://webbitech.co.in/ecommerce/public/api/productlist');
+        //   dispatch(setallplantDetails(data.data))
+        const { data } = await axios.get('https://fakestoreapi.com/products');
+        dispatch(setallplantDetails(data.data))
+
     }
     const [activeTab, setActiveTab] = useState('tab1');
 
@@ -118,6 +169,7 @@ function Description() {
 
     useEffect(() => {
         dispatch(setproductIdDetails(productIdDetails))
+
     }, [])
     return (
         <div className='description-section'>
@@ -126,13 +178,7 @@ function Description() {
                 <div className='row m-0'>
                     <div className='col-6'>
                         <div className='row m-0'>
-                            <div className='col-2 py-5'>
-                                <img src={description4} className='w-75 mb-2' />
-                                <img src={description3} className='w-75 my-2' />
-                                <img src={description2} className='w-75' />
-                                <img src={description1} className='w-75 my-2' />
-                            </div>
-                            <div className='col-10'>
+                            <div className='col-12'>
                                 <img src={description4} className='w-100 h-100' />
                             </div>
                         </div>
@@ -142,92 +188,193 @@ function Description() {
                         </div>
                     </div>
                     <div className='col-6 description-details'>
-                        {productIdDetails && productIdDetails.map((data, index) => {
-                            return (
-                                <>
-                                    <h1>{data.title} <span className='stock'>In Stock</span></h1>
-                                    <img src={Rating} alt='Rating' />
-                                    <span className='review'>4 Reviews</span>
-                                    <br />
-                                    <span className='price pe-2'>{data.total_price}</span><span className='text-decoration-line-through rate'>{data.actual_price}</span>
-                                    <button className='sales-offer'>{data.discount_price} off</button>
-                                    <hr />
-                                    <p>A philodendron white knight has lovely deep red stems that look a lot like pink princess philodendron stems. The leaves, however, are a deep green with bright white variegation. Not ivory, not cream. Bright white.</p>
-                                    {/* <span className="mb-3 count-btn">
-                                        <button
-                                            className="btn sum-btn"
-                                            type="button"
-                                            onClick={handleDecrement}
-                                        >
-                                            -
-                                        </button>
-                                        <span onChange={(e) => setValue(parseInt(e.target.value, 10) || 0)} className='mx-4 count-value'>{value}</span>
-                                        <button
-                                            className="btn sum-btn"
-                                            type="button"
-                                            onClick={handleIncrement}
-                                        >
-                                            +
-                                        </button>
-                                    </span> */}
-                                    <button className={totalshops.includes(data.id) ? 'add-card' : 'shop-card'} onClick={() => handleShopClick(data, data.id, data.total_price)}>Add to Cart <img src={totalshops.includes(data.id) ? shop : blackshop} alt='shop' className='mx-2 p-0' /></button>
-                                    <img src={totallikes.includes(data.id) ? likes : unlike} alt='heart' className='mx-2' onClick={() => handleLikeClick(data)} />
-                                    <h4 className='cate my-4'>Category:<span>Indoor Plant</span></h4>
-                                    <div className='my-3'>
-                                        <span className='icon-plant'>Plant Info : </span>
-                                        <img src={icon1} className='me-3' />
-                                        <img src={icon2} className='me-3' />
-                                        <img src={icon3} className='me-3' />
-                                        <img src={icon4} className='me-3' />
-                                    </div>
-                                </>
-                            )
-                        })}
+                        <>
+                            <h1>Sudha Murty English Text Guide - A <span className='stock'>In Stock</span></h1>
+                            <p>By Lisa Jewall</p>
+                            <img src={star} alt='star' />
+                            <span className='review'>4 Reviews</span>
+                            <br />
+                            <span className='price pe-2'>AED 14.99</span><span className='text-decoration-line-through rate'>AED 20.99</span>
+                            <button className='sales-offer'>50% off</button>
+                            <hr />
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis nunc a molestie dictum. Mauris venenatis, felis scelerisque aliquet lacinia, nulla nisi venenatis odio, id blandit mauris ipsum id sapien.</p>
+                            <div className='condition-level my-3'>
+                                <h1><span>Condition</span> - Very Good (100+ in Stock)</h1>
+                                <button className='very'>Very good</button>
+                                <button className='good'>Good</button>
+                                <button className='well'>Well Read</button>
+                            </div>
+                            <span className="mb-3 count-btn">
+                                <button
+                                    className="btn sum-btn"
+                                    type="button"
+                                    onClick={handleDecrement}
+                                >
+                                    -
+                                </button>
+                                <span onChange={(e) => setValue(parseInt(e.target.value, 10) || 0)} className='mx-4 count-value'>{value}</span>
+                                <button
+                                    className="btn sum-btn"
+                                    type="button"
+                                    onClick={handleIncrement}
+                                >
+                                    +
+                                </button>
+                            </span>
+                            <button className={totalshops.includes(1) ? 'add-card' : 'shop-card'} onClick={() => handleShopClick(1, 2, 3)}>Add to Cart <img src={totalshops.includes(1) ? shop : blackshop} alt='shop' className='mx-2 p-0' /></button>
+                            <span className='like-btn'><img src={totallikes.includes(1) ? likes : unlike} alt='heart' className='mx-2' onClick={() => handleLikeClick(1)} /></span>
+                            <h4 className='cate my-4'>Category:<span className='ms-2'>Lifestyle</span></h4>
+                            <div className='my-3'>
+                                <span className='icon-plant'>Book Info : </span>
+                                <img src={icon1} className='me-3' />
+                                <img src={icon2} className='me-3' />
+                                <img src={icon3} className='me-3' />
+                                <img src={icon4} className='me-3' />
+                            </div>
+                        </>
 
-                        <Nav tabs>
-                            <NavItem className='plant-content'>
-                                <NavLink
-                                    className={activeTab === 'tab1' ? 'active' : ''}
-                                    onClick={() => toggleTab('tab1')}
-                                >
-                                    Descriptions
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink
-                                    className={activeTab === 'tab2' ? 'active' : ''}
-                                    onClick={() => toggleTab('tab2')}
-                                >
-                                    Additional Information
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink
-                                    className={activeTab === 'tab3' ? 'active' : ''}
-                                    onClick={() => toggleTab('tab3')}
-                                >
-                                    Customer Feedback
-                                </NavLink>
-                            </NavItem>
-                            {/* Add more tabs as needed */}
-                        </Nav>
-                        <TabContent activeTab={activeTab} className='mt-3'>
-                            <TabPane tabId="tab1">
-                                <p>Nyctanthes arbor-tristis, also known as the Night-flowering jasmine or Parijat (Parvati chi phula), is a species of Nyctanthes native to South Asia and Southeast Asia. Despite its common name, the species is not a "true jasmine" and not of the genus Jasminum. The tree is sometimes called the "tree of sorrow", because the flowers lose their brightness during daytime; the scientific name arbor-tristis also means "sad tree".</p>
-                            </TabPane>
-                            <TabPane tabId="tab2">
-                                <p>Nyctanthes arbor-tristis, also known as the Night-flowering jasmine or Parijat (Parvati chi phula), is a species of Nyctanthes native to South Asia and Southeast Asia. Despite its common name, the species is not a "true jasmine" and not of the genus Jasminum. The tree is sometimes called the "tree of sorrow", because the flowers lose their brightness during daytime; the scientific name arbor-tristis also means "sad tree".</p>
-                            </TabPane>
-                            <TabPane tabId="tab3">
-                                <p>Nyctanthes arbor-tristis, also known as the Night-flowering jasmine or Parijat (Parvati chi phula), is a species of Nyctanthes native to South Asia and Southeast Asia. Despite its common name, the species is not a "true jasmine" and not of the genus Jasminum. The tree is sometimes called the "tree of sorrow", because the flowers lose their brightness during daytime; the scientific name arbor-tristis also means "sad tree".</p>
-                            </TabPane>
-                            {/* Add more TabPanes as needed */}
-                        </TabContent>
+
                     </div>
+                </div>
+                <div className='container-90 tab-details'>
+                    <Nav tabs>
+                        <NavItem className='plant-content'>
+                            <NavLink
+                                className={activeTab === 'tab1' ? 'active' : ''}
+                                onClick={() => toggleTab('tab1')}
+                            >
+                                Descriptions
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className={activeTab === 'tab2' ? 'active' : ''}
+                                onClick={() => toggleTab('tab2')}
+                            >
+                                Additional Information
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className={activeTab === 'tab3' ? 'active' : ''}
+                                onClick={() => toggleTab('tab3')}
+                            >
+                                Customer Feedback
+                            </NavLink>
+                        </NavItem>
+                        {/* Add more tabs as needed */}
+                    </Nav>
+                    <TabContent activeTab={activeTab} className='mt-3'>
+                        <TabPane tabId="tab1">
+                            <div className='row m-0 tab-content'>
+                                <div className='col-lg-6 col-md-6 col-12 mt-5'>
+                                    <h1>Sudha Murthy English Text Guide</h1>
+                                    <p>This CGP Text Guide contains everything you need to write top-grade essays about 'A Christmas Carol' by Charles Dickens. It's suitable for all GCSE English exams, including the new ones starting in summer 2017. Inside, you'll find clear, thorough notes on the novel's context, plot, characters, themes and the writer's techniques - with quick questions, in-depth questions and exam-style questions included at the end of every section. There's also detailed exam advice to help you improve your grades, plus a cartoon-strip summary to remind you of all the important plot points!</p>
+                                </div>
+                                <div className='col-lg-6 col-md-6 col-12 mt-5'>
+                                    <iframe className='rounded' width="100%" height="315" src="https://www.youtube.com/embed/jp4xdxcc7WU?si=bUpj3Gg3QC0u5uLK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </TabPane>
+                        <TabPane tabId="tab2">
+                            <div className='row m-0 tab-content'>
+                                <div className='col-lg-6 col-md-6 col-12 mt-5'>
+                                    <div className='additional'>
+                                        <ul className='additional'>
+                                            <li className='nav-item'><label>SKU :</label> <span>GOR007119845</span></li>
+                                            <li className='nav-item'><label>ISBN 13  :</label> <span>9781782943099</span></li>
+                                            <li className='nav-item'><label>ISBN 10 :</label> <span>1782943099</span></li>
+                                            <li className='nav-item'><label>TITLE :</label> <span>Grade 9-1 GCSE English Text Guide</span></li>
+                                            <li className='nav-item'><label>AUTHOR :</label> <span>CGP Books</span></li>
+                                            <li className='nav-item'><label>CONDITION :</label> <span>Used - Very Good</span></li>
+                                            <li className='nav-item'><label>BINDING TYPE :</label> <span>Hardback</span></li>
+
+                                        </ul>
+                                        {/* <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td><label>SKU :</label></td>
+                                                    <td><span>GOR007119845</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label>ISBN 13  :</label></td>
+                                                    <td> <span>GOR007119845</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label>ISBN 10  :</label></td>
+                                                    <td> <span>9781782943099</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label>TITLE  :</label></td>
+                                                    <td> Grade 9-1 GCSE English Text Guide</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label>AUTHOR  :</label></td>
+                                                    <td> CGP Books</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label>CONDITION  :</label></td>
+                                                    <td> Used - Very Good</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label>BINDING TYPE  :</label></td>
+                                                    <td>Hardback</td>
+                                                </tr>
+                                            </tbody>
+                                        </table> */}
+                                    </div>
+                                </div>
+                                <div className='col-lg-6 col-md-6 col-12 mt-5'>
+                                    <iframe className='rounded' width="100%" height="315" src="https://www.youtube.com/embed/jp4xdxcc7WU?si=bUpj3Gg3QC0u5uLK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </TabPane>
+                        <TabPane tabId="tab3">
+                            {review.slice(0, showAll ? review.length : 2).map((data, index) => {
+                                return (
+                                    <div className='container-80 pt-3 review'>
+                                        <div className='row m-0'>
+                                            <div className='col-9'>
+                                                <div className='d-flex'>
+                                                    <div>
+                                                        <img src={data.profile_photo_url} className='w-100 pe-4' />
+                                                    </div>
+                                                    <div>
+                                                        <h6>{data.author_name}</h6>
+                                                        <Rating
+                                                            initialRating={data.rating}
+                                                            emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                                            fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                                            readonly={true}
+                                                        />
+                                                        <p>{data.text}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='col-3'>
+                                                <p>{data.time} ago</p>
+                                            </div>
+                                        </div>
+                                        <hr className='' />
+                                    </div>
+                                )
+                            })}
+                            <div className='container-80'>
+                                {!showAll && (
+                                    <button className='show-more hover' onClick={showReview}>Show more </button>
+                                )}
+                                {showLess && (
+                                    <button className='show-more hover' onClick={handleLessMore}>Less</button>
+                                )}
+                            </div>
+
+                        </TabPane>
+                        {/* Add more TabPanes as needed */}
+                    </TabContent>
                 </div>
                 <div className='best-seller mt-5'>
                     <h1 className='product-title text-center pt-5'>Related Products</h1>
-                    <div className='row m-0  py-5'>
+                    {/* <div className='row m-0  py-5'>
                         <div className='col-lg-3 col-sm-6 col-12 py-2'>
                             <div className={isAdded ? 'normal-box' : 'box-view'}>
                                 <button className='sales-offer mt-3 mx-2'>Sale 50%</button>
@@ -296,7 +443,8 @@ function Description() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+                    <BestSeller />
                 </div>
             </section>
             <Footer />

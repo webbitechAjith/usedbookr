@@ -46,7 +46,7 @@
 
 .bg-color {
     border-radius: 15px;
-    background: #056839;
+    background: #4F45A1;
 }
 
 .bg-color h5 {
@@ -66,9 +66,28 @@
 }
 
 .input-section {
-    padding: 15px 50px 0px 150px;
+    width: 40% !important;
+    height: 70%;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 6px 0px rgba(170, 170, 170, 0.25);
+    padding: 40px;
+    position: absolute;
+    top: 12%;
+    left: 5%;
+    
 }
-
+.register-section .input-section{
+    width: 35% !important;
+    height: 90% !important;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 6px 0px rgba(170, 170, 170, 0.25);
+    padding: 40px;
+    position: absolute;
+    top: 5%;
+    left: 7%;
+}
 .login-section h4 {
     margin-bottom: 22px;
     color: #000;
@@ -84,7 +103,7 @@
 }
 
 .login-section h5 span {
-    color: #056839;
+    color: #241D60;
     font-size: 16px;
     font-weight: 600;
 }
@@ -120,11 +139,11 @@
     border: none;
     padding: 10px 50px;
     border-radius: 32px;
-    background: #056839;
+    background: #FFD731;
     box-shadow: 0px 4px 26px 0px rgba(0, 0, 0, 0.25);
-    color: #FFF;
+    color: #241D60;
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .login-section .or {
@@ -136,16 +155,18 @@
 
 @media (max-width: 992px) {
     .input-section {
-        padding:100px;
+        padding: 100px;
     }
 }
+
 @media (max-width: 556px) {
     .input-section {
-        padding:50px;
+        padding: 50px;
     }
 }
+
 @media (max-width: 400px) {
     .input-section {
-        padding:10px;
+        padding: 10px;
     }
 }

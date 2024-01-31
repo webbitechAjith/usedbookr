@@ -61,12 +61,12 @@ function Footer() {
                 </div> */}
                 <div className='footer-bottom'>
                     <div className='container-95'>
-                        <div className='row m-0 '>
+                        <div className='row m-0 align-items-center'>
                             <div className='col-3'>
                                 <p>Copyright ©2024 Usedbookr. All Rights Reserved</p>
                             </div>
-                            <div className='col-6 footer-list'>
-                                <ul className='text-center'>
+                            <div className='col-6 footer-list '>
+                                <ul className='text-center mb-0'>
                                     <li>Track Order</li>
                                     <li>FAQ’s</li>
                                     <li>About</li>

@@ -28,9 +28,11 @@ body {
     top: '10%';
     left: '85%'
 }
-.handleclose .close-btn{
+
+.handleclose .close-btn {
     cursor: pointer;
 }
+
 .popup h1 {
     color: var(--Gray-Scale-Gray-900, #1A1A1A);
     text-align: center;
@@ -125,11 +127,11 @@ body {
 
 .MuiSlider-track {
     height: 5px !important;
-    color: #FFA837;
+    color: #241D60;
 }
 
 .MuiSlider-thumb {
-    color: #FFA837;
+    color: #241D60;
 }
 
 
@@ -251,29 +253,35 @@ body {
 
 
 /* .owlcarousel css start  */
+
+.card-design img {
+    height: 350px !important;
+}
+
 .education {
     border-radius: 10px;
-    background: #229547;
+    background: #291D8E;
+    ;
 }
 
 .magazine {
     border-radius: 10px;
-    background: #6BB884 !important;
+    background: #574AC9 !important;
 }
 
 .philosophy {
     border-radius: 10px;
-    background: #098932;
+    background: #7E6FFF;
 }
 
 .economic {
     border-radius: 10px;
-    background: #3AA15B;
+    background: #585190;
 }
 
 .political {
     border-radius: 10px;
-    background: #229547;
+    background: #180E6C;
 }
 
 .owl-theme h2 {
@@ -300,7 +308,7 @@ body {
     height: 10px !important;
     border: none !important;
     border-radius: 20px !important;
-    background-color: #0EB04D !important;
+    background-color: #241D60 !important;
 }
 
 .arrow-section {
@@ -330,9 +338,9 @@ body {
     padding: 10px 20px;
     border-radius: 43px;
     background: var(--Btn3, #FFD731);
-    color: #30844A;
+    color: #241D60;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 16px;
 }
 
@@ -447,11 +455,11 @@ body {
 .plant-store .circle {
     padding: 5px;
     border-radius: 50%;
-    background: #056839;
+    background: #FFF;
 }
 
 .plant-store button {
-    color: #30844A;
+    color: #241D60;
     font-size: 16px;
     font-weight: 600;
     line-height: 26px;
@@ -467,11 +475,29 @@ body {
     border: 1px solid #E6E6E6;
 }
 
-.like-position {
+.like-position .unlikes {
+    padding: 10px;
+    border-radius: 50%;
+    background: #FFF;
+    position: absolute;
+    top: 2%;
+    left: 80%;
+}
+
+.like-position .likes {
+    padding: 10px;
+    border-radius: 50%;
+    background: #EBE8FF;
+    position: absolute;
+    top: 2%;
+    left: 80%;
+}
+
+/* .like-position {
     position: absolute;
     top: 0%;
-    left: 77%;
-}
+    left: 75%;
+} */
 
 .selles-offer {
     padding: 5px;
@@ -585,7 +611,7 @@ body {
     width: 20% !important;
     border-radius: 43px !important;
     background: var(--Btn3, #FFD731);
-    color: #30844A;
+    color: #241D60;
     font-size: 14px;
     font-weight: 600;
     line-height: 24px;

@@ -21,7 +21,7 @@ const SimpleSlider = () => {
         items: 5,
         nav:false,
         autoplay:true,
-        autoplayTimeout: 1000,
+        autoplayTimeout: 3000,
         loop: true,
         margin: 10,
         responsive: {
@@ -40,8 +40,8 @@ const SimpleSlider = () => {
         },
     };
     return (
-        <div className='ps-lg-5 ps-2 py-5'>
-            <OwlCarousel className="owl-theme" {...owlOptions}>
+        <div className='ps-lg-5 ps-2 py-5 '>
+            <OwlCarousel className="owl-theme card-design" {...owlOptions}>
               <div className='education text-center'>
                 <img src={book1} className='w-100 p-5'/>
                 <h2>EDUCATION</h2>

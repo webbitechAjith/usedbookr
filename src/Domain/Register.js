@@ -20,6 +20,8 @@ import phone from '../Common/assets/image/phone.png'
 
 import axios from 'axios';
 import { setregisterDetails } from '../Redux/CreateSlice';
+import Header from '../Common/pages/Header';
+import Footer from '../Common/pages/Footer';
 
 
 function Register() {
@@ -66,77 +68,83 @@ function Register() {
 
     }
     return (
-        <div className='login-section'>
-            <div className='row m-0 p-3 align-items-stretch'>
-                <div className='col-lg-6 col-md-12 col-12 input-section'>
-                    <h4>Sign up</h4>
-                    <h5>If you already have an account register</h5>
-                    <h5>You can <span className='register-hover' onClick={() => login()}>Login here !</span></h5>
-                    <div className="my-3">
-                        <label htmlFor="text" className="form-label">Email</label>
-                        <div className="input-group">
-                            <span className="pe-2">
-                                <img src={mail} />
-                            </span>
-                            <input type="email" className="form-control border-0 border-bottom" id="email" name='email' value={registerDetails.email} placeholder="Enter your email" onChange={(e) => dispatch(setregisterDetails({ ...registerDetails, email: e.target.value }))} />
+        <>
+            <Header />
+            <div className='login-section register-section'>
+                <div className='row m-0 p-3 align-items-stretch position-relative'>
+                    <div className='col-lg-4 col-md-12 col-12'>
+                        <div className='input-section'>
+                            <h4>Sign up</h4>
+                            <h5>If you already have an account register</h5>
+                            <h5>You can <span className='register-hover' onClick={() => login()}>Login here !</span></h5>
+                            <div className="my-3">
+                                <label htmlFor="text" className="form-label">Email / Phone Number</label>
+                                <div className="input-group">
+                                    <span className="pe-2">
+                                        <img src={mail} />
+                                    </span>
+                                    <input type="email" className="form-control border-0 border-bottom" id="email" name='email' value={registerDetails.email} placeholder="Enter your Email / Phone Number" onChange={(e) => dispatch(setregisterDetails({ ...registerDetails, email: e.target.value }))} />
+                                </div>
+                            </div>
+                            <div className="my-3">
+                                <label htmlFor="text" className="form-label">Username</label>
+                                <div className="input-group">
+                                    <span className="pe-2">
+                                        <img src={usericon} />
+                                    </span>
+                                    <input type="text" className="form-control border-0 border-bottom" id="name" placeholder="Enter your name" required onChange={(e) => dispatch(setregisterDetails({ ...registerDetails, name: e.target.value }))} />
+                                </div>
+                            </div>
+                            {/* <div className="my-3">
+                                <label htmlFor="text" className="form-label">Mobile Number</label>
+                                <div className="input-group">
+                                    <span className="pe-2">
+                                        <img src={phone} />
+                                    </span>
+                                    <input type="text" className="form-control border-0 border-bottom" id="name" placeholder="Enter your mobile number" required onChange={(e) => dispatch(setregisterDetails({ ...registerDetails, mobile: e.target.value }))} />
+                                </div>
+                            </div> */}
+                            <div className="my-3">
+                                <label htmlFor="password" className="form-label">Password</label>
+                                <div className="input-group">
+                                    <span className="pe-2">
+                                        <img src={lock} />
+                                    </span>
+                                    <input type={showPassword ? 'text' : 'password'} className="form-control border-0 border-bottom" id="password" placeholder="Enter your password" required onChange={(e) => dispatch(setregisterDetails({ ...registerDetails, password: e.target.value }))} />
+                                    <button className="btn " type="button" onClick={togglePasswordVisibility}>
+                                        <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="my-3">
+                                <label htmlFor="password" className="form-label">Confirm Password</label>
+                                <div className="input-group">
+                                    <span className="pe-2">
+                                        <img src={lock} />
+                                    </span>
+                                    <input type={confirm ? 'text' : 'password'} className="form-control border-0 border-bottom" id="password" placeholder="Confrim your Password" onChange={(e) => dispatch(setregisterDetails({ ...registerDetails, password_confirm: e.target.value }))} />
+                                    <button
+                                        className="btn "
+                                        type="button"
+                                        onClick={toggleConfiemPasswordVisibility}
+                                    >
+                                        <FontAwesomeIcon icon={confirm ? faEye : faEyeSlash} />
+                                    </button>
+                                </div>
+                            </div>
+                            <div className='btn-section'>
+                                <button className='button' onClick={() => signup()}>Register</button>
+                            </div>
                         </div>
                     </div>
-                    <div className="my-3">
-                        <label htmlFor="text" className="form-label">Username</label>
-                        <div className="input-group">
-                            <span className="pe-2">
-                                <img src={usericon} />
-                            </span>
-                            <input type="text" className="form-control border-0 border-bottom" id="name" placeholder="Enter your name" required onChange={(e) => dispatch(setregisterDetails({ ...registerDetails, name: e.target.value }))} />
-                        </div>
+                    <div className='col-lg-8 col-md-12 col-12 bg-color p-4 text-center mt-lg-0 mt-5'>
+                        <img src={loginImg} className='w-75' />
                     </div>
-                    <div className="my-3">
-                        <label htmlFor="text" className="form-label">Mobile Number</label>
-                        <div className="input-group">
-                            <span className="pe-2">
-                                <img src={phone} />
-                            </span>
-                            <input type="text" className="form-control border-0 border-bottom" id="name" placeholder="Enter your mobile number" required onChange={(e) => dispatch(setregisterDetails({ ...registerDetails, mobile: e.target.value }))} />
-                        </div>
-                    </div>
-                    <div className="my-3">
-                        <label htmlFor="password" className="form-label">Password</label>
-                        <div className="input-group">
-                            <span className="pe-2">
-                                <img src={lock} />
-                            </span>
-                            <input type={showPassword ? 'text' : 'password'} className="form-control border-0 border-bottom" id="password" placeholder="Enter your password" required onChange={(e) => dispatch(setregisterDetails({ ...registerDetails, password: e.target.value }))} />
-                            <button className="btn " type="button" onClick={togglePasswordVisibility}>
-                                <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
-                            </button>
-                        </div>
-                    </div>
-                    <div className="my-3">
-                        <label htmlFor="password" className="form-label">Confirm Password</label>
-                        <div className="input-group">
-                            <span className="pe-2">
-                                <img src={lock} />
-                            </span>
-                            <input type={confirm ? 'text' : 'password'} className="form-control border-0 border-bottom" id="password" placeholder="Confrim your Password" onChange={(e) => dispatch(setregisterDetails({ ...registerDetails, password_confirm: e.target.value }))} />
-                            <button
-                                className="btn "
-                                type="button"
-                                onClick={toggleConfiemPasswordVisibility}
-                            >
-                                <FontAwesomeIcon icon={confirm ? faEye : faEyeSlash} />
-                            </button>
-                        </div>
-                    </div>
-                    <div className='btn-section'>
-                        <button className='button' onClick={() => signup()}>Register</button>
-                    </div>
-                </div>
-                <div className='col-lg-6 col-md-12 col-12 bg-color p-4 text-center mt-lg-0 mt-5'>
-                    <h5 className='text-end phone_number'><FontAwesomeIcon icon={faPhone} style={{ color: "#fafafa", }} className='px-2' /> +971 5 65015231</h5>
-                    <img src={loginImg} className='w-75' />
                 </div>
             </div>
-        </div>
+            <Footer />
+        </>
+
     )
 }
 

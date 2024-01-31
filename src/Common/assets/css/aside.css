@@ -23,8 +23,8 @@
 }
 
 .form-check-input:checked {
-  background-color: #FFA837;
-  border-color: #FFA837;
+  background-color: #291D8E;
+  border-color: #291D8E;
 }
 
 
@@ -72,7 +72,7 @@
 .user_aside .active {
   border-radius: 8px;
   background: var(--gren-gray-scale-50, #EDF2EE);
-  box-shadow: 3px 0px 0px 0px #20B526 inset;
+  box-shadow: 3px 0px 0px 0px #291D8E inset;
   color: #1A1A1A !important;
   font-size: 16px;
   font-weight: 400;
