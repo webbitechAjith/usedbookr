@@ -62,7 +62,7 @@
 }
 
 .sticky-element {
-    background: #F2FFF4;
+    background: #FFF;
 }
 
 .input-set {
@@ -95,12 +95,10 @@
 
 .like-count {
     position: absolute;
-    left: 83%;
-    top: 15px;
-    display: inline-flex;
-    padding: 0px 10px;
-    justify-content: center;
-    align-items: center;
+    top: -20px !important;
+    left: 20px !important;
+    display: inline-block;
+    padding: 3px 10px;
     border-radius: 16px;
     background: #EA4B48;
     color: #FFF;
@@ -108,12 +106,10 @@
 
 .item-count {
     position: absolute;
-    left: 74%;
-    top: 15px;
-    display: inline-flex;
-    padding: 0px 10px;
-    justify-content: center;
-    align-items: center;
+    top: -20px !important;
+    left: 35px !important;
+    display: inline-block;
+    padding: 3px 10px;
     border-radius: 16px;
     background: #EA4B48;
     color: #FFF;
@@ -183,20 +179,76 @@ nav .custom-active {
     line-height: 24px;
 }
 
-@media (max-width: 1200px) {
+/* nav mobile view css start  */
+.sidebar {
+    width: 55%;
+    height: 100%;
+    background: #241D60;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.close-btn {
+    position: fixed;
+    left: 55%;
+    top: 0%;
+    z-index: 999;
+    border: none;
+    background: #FFD731;
+    border-radius: 0px;
+}
+
+.collapse:not(.show) {
+    display: block !important;
+}
+
+.sidebar .nav-content {
+    margin-top: 50px;
+}
+
+.sidebar .nav-content li {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.sidebar .nav-content li a {
+    font-size: 18px;
+}
+
+
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+    .like-count {
+        top: 0px !important;
+        left: 30px !important;
+    }
 
     .item-count {
-        left: 52%;
+        top: 0px !important;
+        left: 30px !important;
     }
 
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 1200px) {
 
     .item-count {
-        position: absolute;
-        left: 50%;
-        top: 15px;
+        left: 64%;
+    }
+
+    .like-count {
+        left: 75%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .item-count {
+        left: 53%;
+    }
+
+    .like-count {
+        left: 70%;
     }
 
 }
@@ -246,4 +298,4 @@ nav .custom-active {
     .mobile-margin {
         margin: 0px 10px !important;
     }
-}
+} */

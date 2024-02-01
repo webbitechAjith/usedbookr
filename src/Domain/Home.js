@@ -35,6 +35,7 @@ import { setisAdded, setisIncrement, setisDecrement, setisLiked, setallplantDeta
 import { useNavigate } from 'react-router-dom';
 import SimpleSlider from '../Common/pages/SimpleSlider';
 import BestSeller from '../Common/pages/BestSeller';
+import Authors from '../Common/pages/Authors';
 
 function Home() {
   const { isLiked, isAdded, allplantsDetails, likedProducts, searchItemDetails, likescount, shopProducts, shopcount, searchfield } = useSelector((state) => state.usedbookr_product)
@@ -113,9 +114,9 @@ function Home() {
       <section className='pt-3'>
         <div className='container-fluid'>
           {/* <header section start  */}
-          <div className='d-lg-block d-none'>
+          <div className='d-lg-block'>
             <div className='row m-0  product-img'>
-              <div className='col-lg-7 col-md-6 col-12 p-0 d-flex align-items-stretch'>
+              <div className='col-lg-7 col-md-12 col-12 p-0 d-lg-flex align-items-stretch'>
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -147,32 +148,72 @@ function Home() {
                   </button>
                 </div>
               </div>
-              <div className='col-lg-5 col-md-6 col-12 pe-0 mt-lg-0 mt-2'>
-                <div className="cards h-50 img-bg" >
-                  <div className="card-body card-content text-center">
-                    <h5>Best Deal</h5>
-                    <h4>Sell your book for best price</h4>
-                    <button className='sell_now'>Sell Now <FontAwesomeIcon icon={faArrowRight} style={{ color: '#FFD731' }} className='ps-2' /></button>
+              <div className='col-lg-5 col-12 pe-0 mt-lg-0 mt-2'>
+                <div className='d-lg-block d-none'>
+                  <div className="cards h-50 img-bg" >
+                    <div className="card-body card-content text-center">
+                      <h5>Best Deal</h5>
+                      <h4>Sell your book for best price</h4>
+                      <button className='sell_now'>Sell Now <FontAwesomeIcon icon={faArrowRight} style={{ color: '#FFD731' }} className='ps-2' /></button>
+                    </div>
+                  </div>
+                  <div className='h-50 pt-1'>
+                    <div className='offer-card'>
+                      <div className='p-1'>
+                        <div className='card-border'>
+                          <h2>30% OFF</h2>
+                          <p>For everything</p>
+                          <span className='code'>Code: BOOKLOVER</span>
+                          <span className='float-end copy'><img src={copy} />copy</span>
+                          <div className='flash mt-2'>
+                            <img src={flash} />
+                            <span className='sale'>Flash sale</span>
+                            <span className='float-end sale'>Ends in 01 h 08 m 59 s</span>
+                          </div>
+                          <div>
+                            <ul>
+                              <li>Cannot be combined with other coupons or promotions</li>
+                              <li>Only on full priced items</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className='h-50 pt-1'>
-                  <div className='offer-card'>
-                    <div className='p-1'>
-                      <div className='card-border'>
-                        <h2>30% OFF</h2>
-                        <p>For everything</p>
-                        <span className='code'>Code: BOOKLOVER</span>
-                        <span className='float-end copy'><img src={copy} />copy</span>
-                        <div className='flash mt-2'>
-                          <img src={flash} />
-                          <span className='sale'>Flash sale</span>
-                          <span className='float-end sale'>Ends in 01 h 08 m 59 s</span>
+                <div className='d-lg-none d-block'>
+                  <div className='row m-0'>
+                    <div className='col-md-6 col-12'>
+                      <div className="cards h-100 img-bg" >
+                        <div className="card-body card-content text-center">
+                          <h5>Best Deal</h5>
+                          <h4>Sell your book for best price</h4>
+                          <button className='sell_now'>Sell Now <FontAwesomeIcon icon={faArrowRight} style={{ color: '#FFD731' }} className='ps-2' /></button>
                         </div>
-                        <div>
-                          <ul>
-                            <li>Cannot be combined with other coupons or promotions</li>
-                            <li>Only on full priced items</li>
-                          </ul>
+                      </div>
+                    </div>
+                    <div className='col-md-6 col-12 mt-md-0 mt-2 pe-md-0'>
+                      <div className='h-100 pt-1'>
+                        <div className='offer-card'>
+                          <div className='p-1'>
+                            <div className='card-border'>
+                              <h2>30% OFF</h2>
+                              <p>For everything</p>
+                              <span className='code'>Code: BOOKLOVER</span>
+                              <span className='float-end copy'><img src={copy} />copy</span>
+                              <div className='flash mt-2'>
+                                <img src={flash} />
+                                <span className='sale'>Flash sale</span>
+                                <span className='float-end sale'>Ends in 01 h 08 m 59 s</span>
+                              </div>
+                              <div>
+                                <ul>
+                                  <li>Cannot be combined with other coupons or promotions</li>
+                                  <li>Only on full priced items</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -182,7 +223,7 @@ function Home() {
             </div>
           </div>
 
-          <div className='d-lg-none d-block'>
+          {/* <div className='d-lg-none d-block'>
             <div className='row m-0 product-img '>
               <div className='col-md-6 col-6 p-0'>
                 <img src={book1} className='w-100 h-100' />
@@ -200,12 +241,16 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* <header section end  */}
           {/* Best sellers in indoor plants start  */}
           <div className='container-95 pt-5'>
             <h1 className='product-title'>Browse your book on Categories</h1>
             <SimpleSlider />
+          </div>
+          <div className='container-95 pt-5'>
+            <h1 className='product-title'>Browse your book on Authors</h1>
+            <Authors />
           </div>
           <div className='container-90 product-list mt-5'>
             <div className='row m-0'>

@@ -251,6 +251,77 @@ body {
     line-height: 24px;
 }
 
+/* author css start  */
+.author-card h2 {
+    margin: 0px !important;
+    padding: 0px !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 30px !important;
+    /* letter-spacing: 0em; */
+    text-align: center;
+
+}
+.author-card{
+    width: 85% !important;
+}
+.author1 {
+    padding: 50px 20px;
+    background-image: url("../image/author1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.author2 {
+    padding: 50px 20px;
+    background-image: url("../image/author2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.author3 {
+    padding: 50px 20px;
+    background-image: url("../image/author3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.author4 {
+    padding: 50px 20px;
+    background-image: url("../image/author4.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+.author5{
+    width: 15% !important;
+    margin-left: 10px;
+    margin: auto 10px;
+}
+.author5 button {
+    width: 100%;
+    /* height: 70%; */
+    padding: 30px 20px;
+    background: #FFD731 !important;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 30px !important;
+    letter-spacing: 0em;
+    text-align: center;
+    text-transform: uppercase;
+
+
+}
+
 
 /* .owlcarousel css start  */
 
