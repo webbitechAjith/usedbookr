@@ -7,7 +7,7 @@
     margin-left: 20px;
     padding: 15px 50px;
     border-radius: 43px;
-    background: #056839;
+    background: #241D60;
     border: none;
     color: #FFF;
     font-size: 16px;
@@ -30,7 +30,7 @@
 }
 
 .like-btn {
-    margin-left: 20px;
+    margin-left: 10px;
     padding: 15px;
     border-radius: 50%;
     background: rgba(36, 29, 96, 0.10);
@@ -137,7 +137,7 @@
 }
 
 .count-btn {
-    padding: 15px 10px;
+    padding: 15px 5px;
     margin: 20px 0px;
     border-radius: 170px;
     border: 1px solid #E6E6E6;
@@ -170,8 +170,8 @@
 }
 
 .shop-card {
-    margin-left: 20px;
-    padding: 10px 100px;
+    margin-left: 10px;
+    padding: 10px 50px;
     border-radius: 43px;
     background: var(--Btn3, #FFD731);
     border: none;
@@ -205,9 +205,9 @@
 
 .nav-tabs .nav-link.active {
     border-bottom: 2px solid #056839 !important;
-    background: #F8F8F8 !important;
+    background: #241D60 !important;
     border-color: none !important;
-    color: #1A1A1A;
+    color: #FFF;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -251,7 +251,7 @@
 }
 
 .plant-content {
-    width: 20%;
+    /* width: 20%; */
     text-align: center;
 }
 
@@ -369,4 +369,51 @@
     color: #FFF;
     font-size: 17px;
     font-weight: 500;
+}
+
+
+/* mobile responsive css start  */
+@media only screen and (min-width:576px) and (max-width: 776px) {
+
+    .shop-card {
+        margin-left: 10px;
+        padding: 10px 10px;
+        border-radius: 50%;
+    }
+    .like-btn {
+        margin-left: 10px;
+        padding: 10px;
+        border-radius: 50%;
+        background: rgba(36, 29, 96, 0.10);
+    }
+    .tab-details {
+        margin: 0px;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 576px) {
+    .description-details h1 {
+        font-size: 22px;
+        line-height: 32px !important;
+    }
+    .condition-level .very {
+        padding: 10px 5px;
+    }
+    .shop-card {
+        margin-left: 10px;
+        padding: 10px 10px;
+        border-radius: 50%;
+    }
+    .like-btn {
+        margin-left: 10px;
+        padding: 10px;
+        border-radius: 50%;
+        background: rgba(36, 29, 96, 0.10);
+    }
+    .tab-details {
+        margin: 0px;
+    }
+    .tab-details .tab-content p {
+        font-size: 14px;
+        line-height: 24px !important;
+    }
 }

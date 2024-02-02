@@ -68,3 +68,12 @@
 .footer-list ul li:last-child {
     border-right: none !important;
 }
+
+
+@media only screen and (min-width: 556px) and (max-width: 767px) {
+    
+    .footer-list ul li {
+        padding: 0px 2px;
+    }
+
+}

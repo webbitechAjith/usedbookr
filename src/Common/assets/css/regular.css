@@ -41,7 +41,10 @@
     max-width: 95%;
     margin: 0 auto;
 }
-
+.container-100{
+    max-width: 100%;
+    margin: 0 auto;
+}
 
 /* css start  */
 
@@ -181,7 +184,7 @@ nav .custom-active {
 
 /* nav mobile view css start  */
 .sidebar {
-    width: 55%;
+    width: 65%;
     height: 100%;
     background: #241D60;
     position: fixed;
@@ -191,7 +194,7 @@ nav .custom-active {
 
 .close-btn {
     position: fixed;
-    left: 55%;
+    left: 65%;
     top: 0%;
     z-index: 999;
     border: none;
@@ -199,7 +202,7 @@ nav .custom-active {
     border-radius: 0px;
 }
 
-.collapse:not(.show) {
+.nav-section .collapse:not(.show) {
     display: block !important;
 }
 
@@ -230,72 +233,22 @@ nav .custom-active {
 
 }
 
-/* @media (max-width: 1200px) {
 
-    .item-count {
-        left: 64%;
+@media only screen and (min-width: 300px) and (max-width: 400px) {
+    .logo-fixed{
+        display: none !important
     }
-
-    .like-count {
-        left: 75%;
+}
+@media only screen and (min-width: 0px) and (max-width: 576px) {
+    .nav-section{
+        padding: 10px 0px;
+    }
+    .logo-design{
+        display: none !important;
+    }
+    
+    .sidebar .nav-content {
+        margin-top: 0px;
     }
 
 }
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .item-count {
-        left: 53%;
-    }
-
-    .like-count {
-        left: 70%;
-    }
-
-}
-
-@media (max-width: 767px) {
-    .item-count {
-        position: absolute;
-        left: 38%;
-        top: -10px;
-    }
-
-}
-
-@media (max-width: 556px) {
-
-    .item-count {
-        position: absolute;
-        left: 38%;
-        top: -10px;
-    }
-
-    .footer-list ul {
-        column-count: 2 !important;
-    }
-
-    .footer-list ul li {
-        display: inline-block;
-        margin: 5px 0px;
-        padding: 6px 20px;
-        border-right: 0px solid !important;
-        color: #3B3B3B;
-        font-family: Poppins;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 24px;
-    }
-
-}
-
-@media (max-width: 400px) {
-
-    .container-90 {
-        max-width: 95%;
-        margin: 0 auto;
-    }
-
-    .mobile-margin {
-        margin: 0px 10px !important;
-    }
-} */

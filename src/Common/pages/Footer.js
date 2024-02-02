@@ -20,7 +20,7 @@ function Footer() {
             <footer className='footer-section'>
                 <div className='container-60 pt-5 pb-2'>
                     <div className='text-center'>
-                        <img src={logo} />
+                        <img src={logo} className='w-100'/>
                         <h6>Contact Us</h6>
                         <hr style={{ width: '20px', margin: '0 auto', border: '5px soild #FFF', color: '#FFF' }} />
                         <p>PO BOX:115786 - Al Warsan3, Dubai, UAE.</p>
@@ -62,10 +62,10 @@ function Footer() {
                 <div className='footer-bottom'>
                     <div className='container-95'>
                         <div className='row m-0 align-items-center'>
-                            <div className='col-3'>
+                            <div className='col-lg-3 col-12 text-center'>
                                 <p>Copyright ©2024 Usedbookr. All Rights Reserved</p>
                             </div>
-                            <div className='col-6 footer-list '>
+                            <div className='col-lg-6 col-12 my-lg-0 my-2 footer-list '>
                                 <ul className='text-center mb-0'>
                                     <li>Track Order</li>
                                     <li>FAQ’s</li>
@@ -74,7 +74,7 @@ function Footer() {
                                     <li>Privacy Policy</li>
                                 </ul>
                             </div>
-                            <div className='col-3'>
+                            <div className='col-lg-3 col-12 text-center'>
                                 <p>Designed by webbitech.com</p>
                             </div>
                         </div>

@@ -11,6 +11,8 @@ import 'font-awesome/css/font-awesome.min.css';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setFilteredProducts, setallplantDetails, setpriceFilter } from '../../Redux/CreateSlice'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClose, faFilter } from '@fortawesome/free-solid-svg-icons';
 
 
 function Aside() {
@@ -39,6 +41,7 @@ function Aside() {
     // language state 
     const language = ['English', 'Tamil', 'Malaiyam', 'Hindi', 'German', 'Bengali']
     const [items, setItems] = useState(language);
+    const [filterOption, setFilterOption] = useState(false);
     const [showAll, setShowAll] = useState(false);
     const [showLess, setShowLess] = useState(false);
     const handleShowMore = () => {
@@ -49,7 +52,13 @@ function Aside() {
         setShowLess(!showLess)
         setShowAll(!showAll);
     };
-
+    const filter = () => {
+        if (filterOption == false) {
+            setFilterOption(true)
+        } else {
+            setFilterOption(false)
+        }
+    }
     const indoor = async () => {
         const onvalue = setTopDetails((prevValue) => (prevValue === 0 ? 1 : 0));
         console.log("onvalue", topDetails)
@@ -97,218 +106,457 @@ function Aside() {
 
     return (
         <>
-            <aside className='my-5'>
-                <div className='aside-section'>
-                    <div className="accordion" id="accordionExample">
-                        <div className="accordion-item border-0">
-                            <h2 className="accordion-header">
-                                <button className="accordion-button btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <b>Categories</b>
-                                </button>
-                            </h2>
-                            <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                <div className="accordion-body">
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" checked={topDetails === 1} onClick={() => indoor()} />
-                                        <label className="form-check-label" for="exampleCheck1">Education<span>(13)</span></label>
+            <aside className='my-lg-5 my-2'>
+                {filterOption ?
+                    <>
+
+                    </>
+                    :
+                    <>
+                        <div className='text-end d-lg-none d-block filter-category my-2'>
+                            <button onClick={filter}><FontAwesomeIcon icon={faFilter} style={{ color: '#FFF' }} className='mx-2' />filter</button>
+                        </div>
+                    </>
+
+                }
+                {filterOption ?
+                    <>
+                        <div className='aside-section fixed-filter'>
+                            <div className=''>
+                                <div className='text-end d-lg-none d-block filter-category my-2'>
+                                    <button onClick={filter}><FontAwesomeIcon icon={faClose} style={{ color: '#FFF' }} className='mx-2' /></button>
+                                </div>
+                                <div className="accordion scroll-y" id="accordionExample">
+                                    <div className="accordion-item border-0">
+                                        <h2 className="accordion-header">
+                                            <button className="accordion-button btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <b>Categories</b>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                            <div className="accordion-body">
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" checked={topDetails === 1} onClick={() => indoor()} />
+                                                    <label className="form-check-label" for="exampleCheck1">Education<span>(13)</span></label>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" onClick={() => outdoor()} />
+                                                    <label className="form-check-label" for="exampleCheck1">Magazines<span>(15)</span></label>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Philosophy & Religion<span>(18)</span></label>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Economics & Business<span>(13)</span></label>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Political<span>(15)</span></label>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Children Comics<span>(18)</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" onClick={() => outdoor()} />
-                                        <label className="form-check-label" for="exampleCheck1">Magazines<span>(15)</span></label>
+                                    <hr className='m-0' />
+                                    <div className="accordion-item border-0">
+                                        <h2 className="accordion-header">
+                                            <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                <b>Condition</b>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div className="accordion-body">
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Good (13)</label>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Very Good (15)</label>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Well Read (22)</label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Philosophy & Religion<span>(18)</span></label>
+                                    <hr className='m-0' />
+                                    <div className="accordion-item border-0">
+                                        <h2 className="accordion-header">
+                                            <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                                                <b>Language</b>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div className="accordion-body">
+                                                {items.slice(0, showAll ? items.length : 3).map((item, index) => (
+                                                    <div className="mb-3 form-check">
+                                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                        <label className="form-check-label" for="exampleCheck1">{item}</label>
+                                                    </div>
+                                                ))}
+                                                {!showAll && (
+                                                    <span className='text-primary hover' onClick={handleShowMore}>{language.length - 3} More </span>
+                                                )}
+                                                {showLess && (
+                                                    <span className='text-primary hover' onClick={handleLessMore}>Less</span>
+                                                )}
+                                            </div>
+
+                                        </div>
                                     </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Economics & Business<span>(13)</span></label>
+                                    <hr className='m-0' />
+                                    <div className="accordion-item border-0">
+                                        <h2 className="accordion-header">
+                                            <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                                                <b>Binding Type</b>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFour" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div className="accordion-body">
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Hard cover</label>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Leather Bound</label>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Non-Binding</label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Political<span>(15)</span></label>
+                                    <hr className='m-0' />
+                                    <div className="accordion-item border-0">
+                                        <h2 className="accordion-header">
+                                            <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+                                                <b>Latest Arrivals</b>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFive" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div className="accordion-body">
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Last 30 Days</label>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Last 90 Days</label>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label" for="exampleCheck1">Last 150 Days</label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Children Comics<span>(18)</span></label>
+                                    <hr className='m-0' />
+                                    <div className="accordion-item border-0">
+                                        <h2 className="accordion-header">
+                                            <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
+                                                <b>Price</b>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseSix" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                            <div className='container-90'>
+                                                <Slider
+                                                    value={value}
+                                                    onChange={rangeSelector}
+                                                    valueLabelDisplay="auto"
+                                                />
+                                                Price is between {value[0]} - {value[1]}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr className='m-0' />
+                                    <div className="accordion-item border-0">
+                                        <h2 className="accordion-header">
+                                            <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour">
+                                                <b>Rating</b>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseSeven" className="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                            <div className="accordion-body">
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <Rating
+                                                        initialRating={5}
+                                                        emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                                        fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                                        readonly={true}
+                                                    /> <b>5.0</b>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <Rating
+                                                        initialRating={4}
+                                                        emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                                        fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                                        readonly={true}
+                                                    /> <b>4.0 & up</b>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <Rating
+                                                        initialRating={3}
+                                                        emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                                        fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                                        readonly={true}
+                                                    /> <b>3.0 & up</b>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <Rating
+                                                        initialRating={2}
+                                                        emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                                        fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                                        readonly={true}
+                                                    /> <b>2.0 & up</b>
+                                                </div>
+                                                <div className="mb-3 form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <Rating
+                                                        initialRating={1}
+                                                        emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                                        fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                                        readonly={true}
+                                                    /> <b>1.0 & up</b>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <hr className='m-0' />
-                        <div className="accordion-item border-0">
-                            <h2 className="accordion-header">
-                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <b>Condition</b>
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div className="accordion-body">
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Good (13)</label>
-                                    </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Very Good (15)</label>
-                                    </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Well Read (22)</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr className='m-0' />
-                        <div className="accordion-item border-0">
-                            <h2 className="accordion-header">
-                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
-                                    <b>Language</b>
-                                </button>
-                            </h2>
-                            <div id="collapseThree" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div className="accordion-body">
-                                    {items.slice(0, showAll ? items.length : 3).map((item, index) => (
+
+                    </>
+                    :
+                    <>
+                    </>
+                }
+                <div className='d-lg-block d-none'>
+                    <div className='aside-section'>
+                        <div className="accordion" id="accordionExample">
+                            <div className="accordion-item border-0">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <b>Categories</b>
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" checked={topDetails === 1} onClick={() => indoor()} />
+                                            <label className="form-check-label" for="exampleCheck1">Education<span>(13)</span></label>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" onClick={() => outdoor()} />
+                                            <label className="form-check-label" for="exampleCheck1">Magazines<span>(15)</span></label>
+                                        </div>
                                         <div className="mb-3 form-check">
                                             <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                            <label className="form-check-label" for="exampleCheck1">{item}</label>
+                                            <label className="form-check-label" for="exampleCheck1">Philosophy & Religion<span>(18)</span></label>
                                         </div>
-                                    ))}
-                                    {!showAll && (
-                                        <span className='text-primary hover' onClick={handleShowMore}>{language.length - 3} More </span>
-                                    )}
-                                    {showLess && (
-                                        <span className='text-primary hover' onClick={handleLessMore}>Less</span>
-                                    )}
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Economics & Business<span>(13)</span></label>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Political<span>(15)</span></label>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Children Comics<span>(18)</span></label>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                            <hr className='m-0' />
+                            <div className="accordion-item border-0">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <b>Condition</b>
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Good (13)</label>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Very Good (15)</label>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Well Read (22)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr className='m-0' />
+                            <div className="accordion-item border-0">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                                        <b>Language</b>
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
+                                        {items.slice(0, showAll ? items.length : 3).map((item, index) => (
+                                            <div className="mb-3 form-check">
+                                                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                <label className="form-check-label" for="exampleCheck1">{item}</label>
+                                            </div>
+                                        ))}
+                                        {!showAll && (
+                                            <span className='text-primary hover' onClick={handleShowMore}>{language.length - 3} More </span>
+                                        )}
+                                        {showLess && (
+                                            <span className='text-primary hover' onClick={handleLessMore}>Less</span>
+                                        )}
+                                    </div>
 
+                                </div>
                             </div>
-                        </div>
-                        <hr className='m-0' />
-                        <div className="accordion-item border-0">
-                            <h2 className="accordion-header">
-                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
-                                    <b>Binding Type</b>
-                                </button>
-                            </h2>
-                            <div id="collapseFour" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div className="accordion-body">
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Hard cover</label>
-                                    </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Leather Bound</label>
-                                    </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Non-Binding</label>
+                            <hr className='m-0' />
+                            <div className="accordion-item border-0">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                                        <b>Binding Type</b>
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Hard cover</label>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Leather Bound</label>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Non-Binding</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr className='m-0' />
-                        <div className="accordion-item border-0">
-                            <h2 className="accordion-header">
-                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
-                                    <b>Latest Arrivals</b>
-                                </button>
-                            </h2>
-                            <div id="collapseFive" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div className="accordion-body">
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Last 30 Days</label>
-                                    </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Last 90 Days</label>
-                                    </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label" for="exampleCheck1">Last 150 Days</label>
+                            <hr className='m-0' />
+                            <div className="accordion-item border-0">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+                                        <b>Latest Arrivals</b>
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Last 30 Days</label>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Last 90 Days</label>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label" for="exampleCheck1">Last 150 Days</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr className='m-0' />
-                        <div className="accordion-item border-0">
-                            <h2 className="accordion-header">
-                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
-                                    <b>Price</b>
-                                </button>
-                            </h2>
-                            <div id="collapseSix" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                <div className='container-90'>
-                                    <Slider
-                                        value={value}
-                                        onChange={rangeSelector}
-                                        valueLabelDisplay="auto"
-                                    />
-                                    Price is between {value[0]} - {value[1]}
+                            <hr className='m-0' />
+                            <div className="accordion-item border-0">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
+                                        <b>Price</b>
+                                    </button>
+                                </h2>
+                                <div id="collapseSix" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                    <div className='container-90'>
+                                        <Slider
+                                            value={value}
+                                            onChange={rangeSelector}
+                                            valueLabelDisplay="auto"
+                                        />
+                                        Price is between {value[0]} - {value[1]}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr className='m-0' />
-                        <div className="accordion-item border-0">
-                            <h2 className="accordion-header">
-                                <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour">
-                                    <b>Rating</b>
-                                </button>
-                            </h2>
-                            <div id="collapseSeven" className="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                <div className="accordion-body">
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <Rating
-                                            initialRating={5}
-                                            emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
-                                            fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
-                                            readonly={true}
-                                        /> <b>5.0</b>
-                                    </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <Rating
-                                            initialRating={4}
-                                            emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
-                                            fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
-                                            readonly={true}
-                                        /> <b>4.0 & up</b>
-                                    </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <Rating
-                                            initialRating={3}
-                                            emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
-                                            fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
-                                            readonly={true}
-                                        /> <b>3.0 & up</b>
-                                    </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <Rating
-                                            initialRating={2}
-                                            emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
-                                            fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
-                                            readonly={true}
-                                        /> <b>2.0 & up</b>
-                                    </div>
-                                    <div className="mb-3 form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <Rating
-                                            initialRating={1}
-                                            emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
-                                            fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
-                                            readonly={true}
-                                        /> <b>1.0 & up</b>
+                            <hr className='m-0' />
+                            <div className="accordion-item border-0">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour">
+                                        <b>Rating</b>
+                                    </button>
+                                </h2>
+                                <div id="collapseSeven" className="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <Rating
+                                                initialRating={5}
+                                                emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                                fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                                readonly={true}
+                                            /> <b>5.0</b>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <Rating
+                                                initialRating={4}
+                                                emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                                fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                                readonly={true}
+                                            /> <b>4.0 & up</b>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <Rating
+                                                initialRating={3}
+                                                emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                                fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                                readonly={true}
+                                            /> <b>3.0 & up</b>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <Rating
+                                                initialRating={2}
+                                                emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                                fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                                readonly={true}
+                                            /> <b>2.0 & up</b>
+                                        </div>
+                                        <div className="mb-3 form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <Rating
+                                                initialRating={1}
+                                                emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                                fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                                readonly={true}
+                                            /> <b>1.0 & up</b>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </aside>
         </>
 

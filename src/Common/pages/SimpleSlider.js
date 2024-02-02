@@ -40,7 +40,7 @@ const SimpleSlider = () => {
         },
     };
     return (
-        <div className='ps-lg-5 ps-2 py-5 '>
+        <div className='ps-lg-5 ps-2 py-lg-5 py-md-4 py-sm-3 py-2 '>
             <OwlCarousel className="owl-theme card-design" {...owlOptions}>
               <div className='education text-center'>
                 <img src={book1} className='w-100 p-5'/>

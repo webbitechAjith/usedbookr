@@ -27,7 +27,7 @@ const BestSeller = () => {
     const owlOption = {
         items: 5,
         nav: false,
-        autoplay: true,
+        // autoplay: true,
         autoplayTimeout: 3000,
         loop: true,
         margin: 10,

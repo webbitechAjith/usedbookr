@@ -174,21 +174,84 @@ function Description() {
     return (
         <div className='description-section'>
             <Header />
-            <section className='description container-90 py-5'>
-                <div className='row m-0'>
-                    <div className='col-6'>
-                        <div className='row m-0'>
-                            <div className='col-12'>
-                                <img src={description4} className='w-100 h-100' />
+            <section className='description container-100 py-5'>
+                <div className='d-lg-block d-none'>
+                    <div className='row m-0'>
+                        <div className='col-6'>
+                            <div className='row m-0'>
+                                <div className='col-12'>
+                                    <img src={description4} className='w-100 h-100' />
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                {/* <button className='buynow'>Add to Cart <img src={shop} alt='shop' className='mx-2 p-0' /></button> */}
+                                <button className='buynow' onClick={() => buynow()}>Buy Now <FontAwesomeIcon icon={faShop} className='mx-2' /></button>
                             </div>
                         </div>
-                        <div className='text-center'>
-                            {/* <button className='buynow'>Add to Cart <img src={shop} alt='shop' className='mx-2 p-0' /></button> */}
-                            <button className='buynow' onClick={() => buynow()}>Buy Now <FontAwesomeIcon icon={faShop} className='mx-2' /></button>
+                        <div className='col-6 description-details'>
+                            <>
+                                <h1>Sudha Murty English Text Guide - A <span className='stock'>In Stock</span></h1>
+                                <p>By Lisa Jewall</p>
+                                <img src={star} alt='star' />
+                                <span className='review'>4 Reviews</span>
+                                <br />
+                                <span className='price pe-2'>AED 14.99</span><span className='text-decoration-line-through rate'>AED 20.99</span>
+                                <button className='sales-offer'>50% off</button>
+                                <hr />
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis nunc a molestie dictum. Mauris venenatis, felis scelerisque aliquet lacinia, nulla nisi venenatis odio, id blandit mauris ipsum id sapien.</p>
+                                <div className='condition-level my-3'>
+                                    <h1><span>Condition</span> - Very Good (100+ in Stock)</h1>
+                                    <button className='very'>Very good</button>
+                                    <button className='very mx-2'>Good</button>
+                                    <button className='very'>Well Read</button>
+                                </div>
+                                <span className="mb-3 count-btn">
+                                    <button
+                                        className="btn sum-btn"
+                                        type="button"
+                                        onClick={handleDecrement}
+                                    >
+                                        -
+                                    </button>
+                                    <span onChange={(e) => setValue(parseInt(e.target.value, 10) || 0)} className='mx-4 count-value'>{value}</span>
+                                    <button
+                                        className="btn sum-btn"
+                                        type="button"
+                                        onClick={handleIncrement}
+                                    >
+                                        +
+                                    </button>
+                                </span>
+                                <button className={totalshops.includes(1) ? 'add-card' : 'shop-card'} onClick={() => handleShopClick(1, 2, 3)}>Add to Cart <img src={totalshops.includes(1) ? shop : blackshop} alt='shop' className='mx-2 p-0' /></button>
+                                <span className='like-btn'><img src={totallikes.includes(1) ? likes : unlike} alt='heart' className='mx-2' onClick={() => handleLikeClick(1)} /></span>
+                                <h4 className='cate my-4'>Category:<span className='ms-2'>Lifestyle</span></h4>
+                                <div className='my-3'>
+                                    <span className='icon-plant'>Book Info : </span>
+                                    <img src={icon1} className='me-3' />
+                                    <img src={icon2} className='me-3' />
+                                    <img src={icon3} className='me-3' />
+                                    <img src={icon4} className='me-3' />
+                                </div>
+                            </>
+
+
                         </div>
                     </div>
-                    <div className='col-6 description-details'>
-                        <>
+                </div>
+                <div className='d-lg-none d-md-block d-none'>
+                    <div className='row m-0'>
+                        <div className='col-5'>
+                            <div className='row m-0'>
+                                <div className='col-12'>
+                                    <img src={description4} className='w-100 h-100' />
+                                </div>
+                            </div>
+                            <div className='text-center'>
+                                {/* <button className='buynow'>Add to Cart <img src={shop} alt='shop' className='mx-2 p-0' /></button> */}
+                                <button className='buynow' onClick={() => buynow()}>Buy Now <FontAwesomeIcon icon={faShop} className='mx-2' /></button>
+                            </div>
+                        </div>
+                        <div className='col-7 description-details'>
                             <h1>Sudha Murty English Text Guide - A <span className='stock'>In Stock</span></h1>
                             <p>By Lisa Jewall</p>
                             <img src={star} alt='star' />
@@ -201,42 +264,116 @@ function Description() {
                             <div className='condition-level my-3'>
                                 <h1><span>Condition</span> - Very Good (100+ in Stock)</h1>
                                 <button className='very'>Very good</button>
-                                <button className='good'>Good</button>
-                                <button className='well'>Well Read</button>
+                                <button className='very mx-2'>Good</button>
+                                <button className='very'>Well Read</button>
                             </div>
-                            <span className="mb-3 count-btn">
-                                <button
-                                    className="btn sum-btn"
-                                    type="button"
-                                    onClick={handleDecrement}
-                                >
-                                    -
-                                </button>
-                                <span onChange={(e) => setValue(parseInt(e.target.value, 10) || 0)} className='mx-4 count-value'>{value}</span>
-                                <button
-                                    className="btn sum-btn"
-                                    type="button"
-                                    onClick={handleIncrement}
-                                >
-                                    +
-                                </button>
-                            </span>
-                            <button className={totalshops.includes(1) ? 'add-card' : 'shop-card'} onClick={() => handleShopClick(1, 2, 3)}>Add to Cart <img src={totalshops.includes(1) ? shop : blackshop} alt='shop' className='mx-2 p-0' /></button>
-                            <span className='like-btn'><img src={totallikes.includes(1) ? likes : unlike} alt='heart' className='mx-2' onClick={() => handleLikeClick(1)} /></span>
-                            <h4 className='cate my-4'>Category:<span className='ms-2'>Lifestyle</span></h4>
-                            <div className='my-3'>
-                                <span className='icon-plant'>Book Info : </span>
-                                <img src={icon1} className='me-3' />
-                                <img src={icon2} className='me-3' />
-                                <img src={icon3} className='me-3' />
-                                <img src={icon4} className='me-3' />
-                            </div>
-                        </>
+                        </div>
+                        <div className='col-12 description-details text-center mt-5'>
+                            <>
+                                <span className="mb-3 count-btn">
+                                    <button
+                                        className="btn sum-btn"
+                                        type="button"
+                                        onClick={handleDecrement}
+                                    >
+                                        -
+                                    </button>
+                                    <span onChange={(e) => setValue(parseInt(e.target.value, 10) || 0)} className='mx-4 count-value'>{value}</span>
+                                    <button
+                                        className="btn sum-btn"
+                                        type="button"
+                                        onClick={handleIncrement}
+                                    >
+                                        +
+                                    </button>
+                                </span>
+                                <button className={totalshops.includes(1) ? 'add-card' : 'shop-card'} onClick={() => handleShopClick(1, 2, 3)}>Add to Cart <img src={totalshops.includes(1) ? shop : blackshop} alt='shop' className='mx-2 p-0' /></button>
+                                <span className='like-btn'><img src={totallikes.includes(1) ? likes : unlike} alt='heart' className='mx-2' onClick={() => handleLikeClick(1)} /></span>
+                                <h4 className='cate my-4'>Category:<span className='ms-2'>Lifestyle</span></h4>
+                                <div className='my-3'>
+                                    <span className='icon-plant'>Book Info : </span>
+                                    <img src={icon1} className='me-3' />
+                                    <img src={icon2} className='me-3' />
+                                    <img src={icon3} className='me-3' />
+                                    <img src={icon4} className='me-3' />
+                                </div>
+                            </>
 
 
+                        </div>
                     </div>
+
                 </div>
-                <div className='container-90 tab-details'>
+                <div className='d-lg-none d-md-none d-block'>
+                    <div className='row m-0'>
+                        <div className='col-12'>
+                            <div className='row m-0'>
+                                <div className='col-12'>
+                                    <img src={description4} className='w-100 h-100' />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className='col-12 description-details mt-4'>
+                            <h1>Sudha Murty English Text Guide - A <span className='stock'>In Stock</span></h1>
+                            <p>By Lisa Jewall</p>
+                            <img src={star} alt='star' />
+                            <span className='review'>4 Reviews</span>
+                            <br />
+                            <span className='price pe-2'>AED 14.99</span><span className='text-decoration-line-through rate'>AED 20.99</span>
+                            <button className='sales-offer'>50% off</button>
+                            <hr />
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis nunc a molestie dictum. Mauris venenatis, felis scelerisque aliquet lacinia, nulla nisi venenatis odio, id blandit mauris ipsum id sapien.</p>
+                            <div className='condition-level my-4'>
+                                <h1><span>Condition</span> - Very Good (100+ in Stock)</h1>
+                                <button className='very'>Very good</button>
+                                <button className='very mx-2'>Good</button>
+                                <button className='very'>Well Read</button>
+                            </div>
+                            <>
+                                <span className="mb-3 count-btn">
+                                    <button
+                                        className="btn sum-btn"
+                                        type="button"
+                                        onClick={handleDecrement}
+                                    >
+                                        -
+                                    </button>
+                                    <span onChange={(e) => setValue(parseInt(e.target.value, 10) || 0)} className='mx-4 count-value'>{value}</span>
+                                    <button
+                                        className="btn sum-btn"
+                                        type="button"
+                                        onClick={handleIncrement}
+                                    >
+                                        +
+                                    </button>
+                                </span>
+                                <span className='d-md-block d-none'>
+                                    <button className={totalshops.includes(1) ? 'add-card' : 'shop-card'} onClick={() => handleShopClick(1, 2, 3)}>Add to Cart <img src={totalshops.includes(1) ? shop : blackshop} alt='shop' className='mx-2 p-0' /></button>
+                                </span>
+                                <span className='d-md-none d-inline-block'>
+                                    <button className={totalshops.includes(1) ? 'add-card' : 'shop-card'} onClick={() => handleShopClick(1, 2, 3)}><img src={totalshops.includes(1) ? shop : blackshop} alt='shop' className='mx-2 p-0' /></button>
+                                </span>
+                                {/* <button className={totalshops.includes(1) ? 'add-card' : 'shop-card'} onClick={() => handleShopClick(1, 2, 3)}>Add to Cart <img src={totalshops.includes(1) ? shop : blackshop} alt='shop' className='mx-2 p-0' /></button> */}
+                                <span className='like-btn'><img src={totallikes.includes(1) ? likes : unlike} alt='heart' className='mx-2' onClick={() => handleLikeClick(1)} /></span>
+                                <h4 className='cate my-4'>Category:<span className='ms-2'>Lifestyle</span></h4>
+                                <div className='my-3'>
+                                    <span className='icon-plant'>Book Info : </span>
+                                    <img src={icon1} className='me-3' />
+                                    <img src={icon2} className='me-3' />
+                                    <img src={icon3} className='me-3' />
+                                    <img src={icon4} className='me-3' />
+                                </div>
+                                <div className='text-center'>
+                                    {/* <button className='buynow'>Add to Cart <img src={shop} alt='shop' className='mx-2 p-0' /></button> */}
+                                    <button className='buynow' onClick={() => buynow()}>Buy Now <FontAwesomeIcon icon={faShop} className='mx-2' /></button>
+                                </div>
+                            </>
+                        </div>
+                    </div>
+
+                </div>
+                <div className='container-90 tab-details mt-lg-5 mt-md-4 mt-3'>
                     <Nav tabs>
                         <NavItem className='plant-content'>
                             <NavLink
@@ -279,8 +416,8 @@ function Description() {
                         <TabPane tabId="tab2">
                             <div className='row m-0 tab-content'>
                                 <div className='col-lg-6 col-md-6 col-12 mt-5'>
-                                    <div className='additional'>
-                                        <ul className='additional'>
+                                    <div className='row m-0 additional'>
+                                        {/* <ul className='additional'>
                                             <li className='nav-item'><label>SKU :</label> <span>GOR007119845</span></li>
                                             <li className='nav-item'><label>ISBN 13  :</label> <span>9781782943099</span></li>
                                             <li className='nav-item'><label>ISBN 10 :</label> <span>1782943099</span></li>
@@ -288,40 +425,49 @@ function Description() {
                                             <li className='nav-item'><label>AUTHOR :</label> <span>CGP Books</span></li>
                                             <li className='nav-item'><label>CONDITION :</label> <span>Used - Very Good</span></li>
                                             <li className='nav-item'><label>BINDING TYPE :</label> <span>Hardback</span></li>
-
-                                        </ul>
-                                        {/* <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td><label>SKU :</label></td>
-                                                    <td><span>GOR007119845</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>ISBN 13  :</label></td>
-                                                    <td> <span>GOR007119845</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>ISBN 10  :</label></td>
-                                                    <td> <span>9781782943099</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>TITLE  :</label></td>
-                                                    <td> Grade 9-1 GCSE English Text Guide</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>AUTHOR  :</label></td>
-                                                    <td> CGP Books</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>CONDITION  :</label></td>
-                                                    <td> Used - Very Good</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>BINDING TYPE  :</label></td>
-                                                    <td>Hardback</td>
-                                                </tr>
-                                            </tbody>
-                                        </table> */}
+                                        </ul> */}
+                                        <div className='col-4'>
+                                            <label>SKU :</label>
+                                        </div>
+                                        <div className='col-8'>
+                                            <span>GOR007119845</span>
+                                        </div>
+                                        <div className='col-4 mt-4'>
+                                            <label>ISBN 13 :</label>
+                                        </div>
+                                        <div className='col-8 mt-4'>
+                                            <span>GOR007119845</span>
+                                        </div>
+                                        <div className='col-4 mt-4'>
+                                            <label>ISBN 10 :</label>
+                                        </div>
+                                        <div className='col-8 mt-4'>
+                                            <span>GOR007119845</span>
+                                        </div>
+                                        <div className='col-4 mt-4'>
+                                            <label>TITLE :</label>
+                                        </div>
+                                        <div className='col-8 mt-4'>
+                                            <span>Grade 9-1 GCSE English Text Guide</span>
+                                        </div>
+                                        <div className='col-4 mt-4'>
+                                            <label>AUTHOR :</label>
+                                        </div>
+                                        <div className='col-8 mt-4'>
+                                            <span>CGP Books</span>
+                                        </div>
+                                        <div className='col-4 mt-4'>
+                                            <label>CONDITION TYPE:</label>
+                                        </div>
+                                        <div className='col-8 mt-4'>
+                                            <span>Used - Very Good</span>
+                                        </div>
+                                        <div className='col-4 mt-4'>
+                                            <label>BINDING TYPE :</label>
+                                        </div>
+                                        <div className='col-8 mt-4'>
+                                            <span>Hardback</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className='col-lg-6 col-md-6 col-12 mt-5'>
@@ -334,12 +480,12 @@ function Description() {
                                 return (
                                     <div className='container-80 pt-3 review'>
                                         <div className='row m-0'>
-                                            <div className='col-9'>
+                                            <div className='col-lg-9 col-md-9 col-12'>
                                                 <div className='d-flex'>
-                                                    <div>
-                                                        <img src={data.profile_photo_url} className='w-100 pe-4' />
+                                                    <div className='w-50'>
+                                                        <img src={data.profile_photo_url} className='w-50 pe-4' />
                                                     </div>
-                                                    <div>
+                                                    <div className='w-75'>
                                                         <h6>{data.author_name}</h6>
                                                         <Rating
                                                             initialRating={data.rating}
@@ -347,12 +493,14 @@ function Description() {
                                                             fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
                                                             readonly={true}
                                                         />
-                                                        <p>{data.text}</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className='col-3'>
-                                                <p>{data.time} ago</p>
+                                            <div className='col-lg-3 col-md-3 col-12'>
+                                                <p>{data.relative_time_description}</p>
+                                            </div>
+                                            <div className='col-12'>
+                                            <p>{data.text}</p>
                                             </div>
                                         </div>
                                         <hr className='' />

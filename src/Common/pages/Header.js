@@ -201,7 +201,7 @@ function Header() {
                             </div>
                             <div className='d-lg-none d-md-none d-block w-100'>
                                 <div className='row m-0'>
-                                    <div className='col-2'>
+                                    <div className='col-2 p-0'>
                                         {isClass1Show ?
                                             <>
                                                 <button className="navbar-toggler close-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" onClick={() => navButton()}>
@@ -216,10 +216,10 @@ function Header() {
                                             </>
                                         }
                                     </div>
-                                    <div className='col-4'>
+                                    <div className='col-4 logo-design'>
                                         <a className="navbar-brand d-lg-none d-md-none" href="#"><img src={mobilelogo} /></a>
                                     </div>
-                                    <div className='col-6'>
+                                    <div className='col-md-6 col-sm-6 col-8 p-0'>
                                         <div className='icon-section d-lg-none d-md-none d-flex align-items-end'>
                                             <span className='position-relative'>
                                                 <FontAwesomeIcon icon={faHeart} className='mx-3 view-all' style={{ color: '#FFF', fontSize: '30px', paddingTop: '10px' }} onClick={() => hearts()} />
@@ -243,6 +243,9 @@ function Header() {
                                             <span className='like-count'>{likescount}</span> */}
                                         </div>
                                     </div>
+                                    <div className='col-2 p-0 d-md-none d-sm-none logo-fixed'>
+                                        <a className="navbar-brand d-lg-none d-md-none" href="#"><img src={mobilelogo} className='w-100'/></a>
+                                    </div>
                                 </div>
 
                             </div>
@@ -265,8 +268,8 @@ function Header() {
                                     <>
                                         <div className="sidebar">
                                             <div className={`${isClass1Show == true ? 'nav-show' : ''} collapse navbar-collapse navbarNav justify-content-center navlist`} id="navbarSupportedContent">
-                                                <ul className="navbar-nav py-2 nav-content">
-                                                    {/* <li className='mb-5 mt-2 text-center'><img src={logo} className='w-100' /></li> */}
+                                                <ul className="navbar-nav pb-3 nav-content">
+                                                    <li className='mb-5 mt-2 text-center d-md-none d-sm-none d-block '><img src={mobilelogo} className='w-100' /></li>
                                                     <li className='nav-item d-flex align-items-center'>
                                                         <NavLink exact to={{ pathname: '/' }} className={`${pathname === '/' ? 'active' : 'custom-active'} text-decoration-none`}>
                                                             Home
@@ -290,7 +293,7 @@ function Header() {
                                                     </li>
 
                                                     <li className='d-flex align-items-center'>
-                                                        <NavLink exact to="/about" className={`${pathname === '/about' ? 'active' : 'custom-active'} text-decoration-none`}>
+                                                        <NavLink exact to="/Description" className={`${pathname === '/Description' ? 'active' : 'custom-active'} text-decoration-none`}>
                                                             New Arrivals
                                                         </NavLink>
                                                     </li>
@@ -335,7 +338,7 @@ function Header() {
                                                 </li>
 
                                                 <li className='d-flex align-items-center'>
-                                                    <NavLink exact to="/about" className={`${pathname === '/about' ? 'active' : 'custom-active'} text-decoration-none`}>
+                                                    <NavLink exact to="/Description" className={`${pathname === '/Description' ? 'active' : 'custom-active'} text-decoration-none`}>
                                                         New Arrivals
                                                     </NavLink>
                                                 </li>

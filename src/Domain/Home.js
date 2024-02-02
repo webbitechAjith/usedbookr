@@ -183,7 +183,7 @@ function Home() {
                 </div>
                 <div className='d-lg-none d-block'>
                   <div className='row m-0'>
-                    <div className='col-md-6 col-12'>
+                    {/* <div className='col-md-6 col-12'>
                       <div className="cards h-100 img-bg" >
                         <div className="card-body card-content text-center">
                           <h5>Best Deal</h5>
@@ -191,8 +191,8 @@ function Home() {
                           <button className='sell_now'>Sell Now <FontAwesomeIcon icon={faArrowRight} style={{ color: '#FFD731' }} className='ps-2' /></button>
                         </div>
                       </div>
-                    </div>
-                    <div className='col-md-6 col-12 mt-md-0 mt-2 pe-md-0'>
+                    </div> */}
+                    <div className='col-12 mt-md-0 mt-2 p-0'>
                       <div className='h-100 pt-1'>
                         <div className='offer-card'>
                           <div className='p-1'>
@@ -250,17 +250,21 @@ function Home() {
           </div>
           <div className='container-95 pt-5'>
             <h1 className='product-title'>Browse your book on Authors</h1>
-            <Authors />
+            <div className='mt-5'>
+              <Authors />
+            </div>
           </div>
           <div className='container-90 product-list mt-5'>
-            <div className='row m-0'>
-              <div className='col-lg-10 col-md-10 col-sm-9 col-8'>
+            {/* <div className='row m-0'>
+              <div className='col-lg-10 col-md-9 col-8'>
                 <span className='product-title'>Best Sellers in Education Books</span>
               </div>
-              <div className='col-lg-2 col-md-2 col-sm-3 col-4 d-flex align-items-center justify-content-center '>
-                <span className='float-end viewall' onClick={() => all_product()}>View All<FontAwesomeIcon icon={faArrowRight} style={{ color: '#056839' }} className='ps-2' /></span>
+              <div className='col-lg-2 col-md-3 col-4 p-0 '>
+                <span className='float-end viewall' onClick={() => all_product()}>View All<FontAwesomeIcon icon={faArrowRight} style={{ color: '#056839' }} className='ps-2 d-lg-block d-md-block d-sm-block d-none' /></span>
               </div>
-            </div>
+            </div> */}
+            <span className='product-title'>Best Sellers in Education Books</span>
+            <span className='float-end viewall' onClick={() => all_product()}>View All<FontAwesomeIcon icon={faArrowRight} style={{ color: '#241D60' }} className='ps-2' /></span>
             <div className='row m-0 py-5'>
               {searchfield ?
                 <>
@@ -313,13 +317,13 @@ function Home() {
         </div>
         {/* Best sellers in indoor plants end  */}
         <div className='plant-store'>
-          <div className='row m-0 p-5 '>
+          <div className='row m-0 p-lg-5 p-md-5 p-3 '>
             <div className='col-lg-6 col-12 slide-left visible'>
               <img src={book4} className='image-1 pe-2' />
               <img src={book5} className='image-2' />
             </div>
-            <div className='col-lg-6 col-12 ps-5 slide-right visible'>
-              <h3 className='w-50'>100% Trusted Book Store</h3>
+            <div className='col-lg-6 col-12 ps-lg-5 ps-md-5 ps-sm-3 ps-0 mt-lg-0 mt-5 slide-right visible'>
+              <h3 className='w-lg-50 w-md-50 w-100 mb-4'>100% Trusted Book Store</h3>
               <div className='row m-0'>
                 <div className='col-1 p-0'>
                   <span className='circle'><FontAwesomeIcon icon={faCheck} style={{ color: '#574AC9' }} /></span>
@@ -351,8 +355,8 @@ function Home() {
             <span className='float-end viewall'>View All<FontAwesomeIcon icon={faArrowRight} style={{ color: '#30844A' }} className='ps-2' /></span>
             <BestSeller />
           </div>
-          <div className='contact-info mx-4 my-5'>
-            <div className='row m-0 p-5 '>
+          <div className='contact-info mx-lg-4 mx-md-4 mx-sm-2 mx-0 my-lg-5 my-md-4 my-sm-3 my-2'>
+            <div className='row m-0 p-lg-5 p-md-5 py-2 '>
               <div className='col-lg-3 col-md-6 col-12 '>
                 <div className='contact-box'>
                   <img src={address} alt='location' />

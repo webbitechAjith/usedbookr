@@ -23,11 +23,11 @@ const Authors = () => {
                 nav:false
             },
             600: {
-                items: 1,
+                items: 2,
                 nav:false
             },
             800: {
-                items: 2,
+                items: 3,
                 nav:false
             },
             1000: {

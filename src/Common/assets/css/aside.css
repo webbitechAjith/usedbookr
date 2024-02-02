@@ -90,10 +90,49 @@
   line-height: 24px;
 }
 
-.accordion-body .hover:hover{
+.accordion-body .hover:hover {
   cursor: pointer;
 }
+
 .fa-star:before {
   content: "\2605" !important;
   margin-left: 2px;
+}
+
+
+.filter-category button {
+  padding: 10px;
+  background: #241D60;
+  border-radius: 10px;
+  border: none;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px !important;
+}
+
+.fixed-filter {
+  width: 70%;
+  background: #FFF;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.scroll-y::-webkit-scrollbar {
+  width: 5px;
+  background-color: #F5F5F5;
+}
+
+.scroll-y::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.44, rgb(122, 153, 217)),color-stop(0.72, rgb(73, 125, 189)),color-stop(0.86, rgb(28, 58, 148)));
+}
+
+.fixed-filter .scroll-y {
+  max-height: 600px;
+  /* Set the maximum height to enable vertical scrolling */
+  overflow-y: auto;
+  /* overflow-y: scroll; */
 }
