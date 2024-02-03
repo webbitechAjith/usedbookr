@@ -33,7 +33,7 @@ import arrive1 from '../Common/assets/image/arrive1.png'
 import seller1 from '../Common/assets/image/seller1.png'
 
 import { useNavigate, useParams } from 'react-router-dom';
-import { setallplantDetails, setproductIdDetails, setLikedProducts, setlikeProduct, setlikescount, setShopProducts, setshopcount, setsingleItemCount } from '../Redux/CreateSlice';
+import { setallplantDetails, setproductIdDetails, setLikedProducts, setlikeProduct, setlikescount, setShopProducts, setshopcount, setsingleItemCount, setClass1Hide } from '../Redux/CreateSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import BestSeller from '../Common/pages/BestSeller';
 
@@ -169,8 +169,10 @@ function Description() {
 
     useEffect(() => {
         dispatch(setproductIdDetails(productIdDetails))
-
+        dispatch(setClass1Hide(false))
+        window.scrollTo(0, 0);
     }, [])
+ 
     return (
         <div className='description-section'>
             <Header />

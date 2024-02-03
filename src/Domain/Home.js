@@ -31,7 +31,7 @@ import copy from '../Common/assets/image/copy.png'
 import flash from '../Common/assets/image/flash.png'
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setisAdded, setisIncrement, setisDecrement, setisLiked, setallplantDetails, setLikedProducts, setlikeProduct, setlikescount, setShopProducts, setshopcount } from '../Redux/CreateSlice';
+import { setisAdded, setisIncrement, setisDecrement, setisLiked, setallplantDetails, setLikedProducts, setlikeProduct, setlikescount, setShopProducts, setshopcount, setClass1Hide } from '../Redux/CreateSlice';
 import { useNavigate } from 'react-router-dom';
 import SimpleSlider from '../Common/pages/SimpleSlider';
 import BestSeller from '../Common/pages/BestSeller';
@@ -104,6 +104,8 @@ function Home() {
   // const firstThreeProducts = allplantsDetails.slice(0, 3);
   useEffect(() => {
     plantproduct();
+    dispatch(setClass1Hide(false))
+    window.scrollTo(0, 0);
   }, [])
   return (
     <div>

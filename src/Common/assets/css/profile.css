@@ -36,6 +36,8 @@
 
 .profile-section .edit-icon {
     position: absolute;
+    top: 50%;
+    left: 40%;
     bottom: 25%;
     right: 25%;
     width: 40px;
@@ -216,7 +218,7 @@
 }
 
 .order-card button {
-    padding: 10px 20px;
+    padding: 10px;
     border: none;
     border-radius: 43px;
     background: #FFD731;
@@ -257,7 +259,8 @@ thead th {
     line-height: 26px;
 }
 
-.total-wish span {
+.total-wish h3 {
+    display: inline;
     padding: 5px;
     border-radius: 4px;
     background: rgba(32, 181, 38, 0.20);
@@ -391,3 +394,205 @@ thead th {
 }
 
 /* puechase css end  */
+
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+
+    /* profile css start  */
+
+    .profile-section .profile-container {
+        position: unset !important;
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-section .profile-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .profile-section .edit-icon {
+        position: unset !important;
+        width: 0%;
+        padding: 30px 50px;
+        border-radius: 10px !important;
+    }
+
+    .edit-icon span {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        color: #000;
+    }
+
+    /* history css start  */
+    .history-head {
+        margin-left: 0%;
+    }
+
+    .filter-option {
+        position: unset !important;
+    }
+
+    /* wishlist page css start  */
+    .profile-head {
+        margin-left: 0%;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .mobile-nav li {
+        text-align: center;
+        margin: 20px 25px 10px 25px;
+
+    }
+
+    .profile-section .profile-container {
+        position: unset;
+    }
+
+    .profile-section .profile-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .profile-section .edit-icon {
+        position: unset !important;
+        width: 0%;
+        padding: 30px 50px;
+        border-radius: 10px !important;
+    }
+
+    .edit-icon span {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        color: #000;
+    }
+
+    .history-head {
+        margin-left: 0%;
+    }
+
+    .order-card h3 {
+        padding-bottom: 10px !important;
+    }
+
+    .filter-option {
+        position: unset !important;
+    }
+
+    /* wishlist page css start  */
+    .profile-head {
+        margin-left: 0%;
+    }
+
+    .rate_details label {
+        color: #241D60 !important;
+        font-size: 18px !important;
+        text-transform: uppercase;
+    }
+
+    .rate_details h6 {
+        color: #241D60 !important;
+        font-size: 18px !important;
+        font-weight: 700;
+    }
+
+    .rate_details h3 {
+        display: inline;
+        padding: 5px;
+        border-radius: 4px;
+        background: rgba(32, 181, 38, 0.20);
+        color: #2C742F;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 480px) {}
+
+@media only screen and (min-width: 300px) and (max-width: 576px) {
+    .profile-section .profile-card {
+        padding: 0px !important;
+    }
+
+    .profile-section .edit-icon {
+        position: unset !important;
+        width: 0%;
+        padding: 20px 40px;
+        border-radius: 10px !important;
+    }
+
+    .edit-icon span {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 26px;
+        color: #000;
+    }
+
+    .profile-title h2 {
+        font-size: 24px !important;
+        line-height: 34px !important;
+    }
+
+    .profile-title p {
+        font-size: 16px !important;
+        line-height: 26px !important;
+    }
+
+    .history-head {
+        margin-left: 0%;
+        font-size: 22px;
+        line-height: 32px !important;
+    }
+
+    .filter-option {
+        position: unset !important;
+        padding: 5px 0px;
+    }
+
+    .order-card h3 {
+        padding-bottom: 0px !important;
+    }
+
+    /* wishlist page css start  */
+    .profile-head {
+        margin-left: 0%;
+    }
+
+    .rate_details label {
+        color: #241D60 !important;
+        font-size: 18px !important;
+        text-transform: uppercase;
+        padding: 10px 0px;
+    }
+
+    .rate_details h6 {
+        padding: 10px 0px;
+        color: #241D60 !important;
+        font-size: 18px !important;
+        font-weight: 700;
+    }
+
+    .rate_details h3 {
+        margin: 10px 0px !important;
+        display: inline;
+        padding: 5px;
+        border-radius: 4px;
+        background: rgba(32, 181, 38, 0.20);
+        color: #2C742F;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .wishlist-product .order-card {
+        padding: 10px 0px !important;
+    }
+    .profile-head {
+        font-size: 26px;
+        line-height: 36px !important;
+    }
+
+}
