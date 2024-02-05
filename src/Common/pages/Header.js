@@ -108,7 +108,6 @@ function Header() {
     // useEffect(() => {
 
     // }, [])
-    console.log(isClass1Show)
     return (
         <>
             <div className='top-header'>
@@ -159,6 +158,11 @@ function Header() {
                             </div>
                         </div>
 
+                    </div>
+                </div>
+                <div className='d-lg-none d-md-none d-block'>
+                    <div className='text-center bg-white py-3'>
+                        <img src={logo} className='w-50' />
                     </div>
                 </div>
                 <div className='nav-section'>
@@ -216,11 +220,9 @@ function Header() {
                                             </>
                                         }
                                     </div>
-                                    <div className='col-4 logo-design'>
-                                        <a className="navbar-brand d-lg-none d-md-none" href="#"><img src={mobilelogo} /></a>
-                                    </div>
-                                    <div className='col-md-6 col-sm-6 col-8 p-0'>
-                                        <div className='icon-section d-lg-none d-md-none d-flex align-items-end'>
+                                  
+                                    <div className='col-10 p-0'>
+                                        <div className='icon-section d-lg-none d-md-none space-item align-items-end'>
                                             <span className='position-relative'>
                                                 <FontAwesomeIcon icon={faHeart} className='mx-3 view-all' style={{ color: '#FFF', fontSize: '30px', paddingTop: '10px' }} onClick={() => hearts()} />
                                                 {/* <img src={whiteheart} width='50px' alt='heart' className='mx-3 mobile-margin' onClick={() => hearts()} /> */}
@@ -243,9 +245,7 @@ function Header() {
                                             <span className='like-count'>{likescount}</span> */}
                                         </div>
                                     </div>
-                                    <div className='col-2 p-0 d-md-none d-sm-none logo-fixed'>
-                                        <a className="navbar-brand d-lg-none d-md-none" href="#"><img src={mobilelogo} className='w-100' /></a>
-                                    </div>
+                                    
                                 </div>
 
                             </div>

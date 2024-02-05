@@ -153,7 +153,11 @@
 .drop-width {
     position: static;
 }
-
+.space-item{
+    display: grid !important;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
+}
 .drop-width .list-group .list-group-item:hover {
     background: #241D60 !important;
     color: #FFF !important;

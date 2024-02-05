@@ -18,7 +18,7 @@ import { faArrowRight, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setisAdded, setisIncrement, setisDecrement, setisLiked, setallplantDetails, setLikedProducts, setlikeProduct, setlikescount, setShopProducts, setshopcount, setproductIdDetails } from '../Redux/CreateSlice';
+import { setisAdded, setisIncrement, setisDecrement, setisLiked, setallplantDetails, setLikedProducts, setlikeProduct, setlikescount, setShopProducts, setshopcount, setproductIdDetails, setClass1Hide } from '../Redux/CreateSlice';
 import { Link, useNavigate } from 'react-router-dom'
 import Authorname from '../Common/pages/Authorname';
 
@@ -85,6 +85,7 @@ function Autherfliter() {
     navigate('/Description');
   }
   useEffect(() => {
+    dispatch(setClass1Hide(false))
     window.scrollTo(0, 0);
   }, []);
   return (
