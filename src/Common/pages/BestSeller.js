@@ -20,23 +20,25 @@ import add from '../assets/image/addcard.png'
 import remove from '../assets/image/removecard.png'
 
 import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const BestSeller = () => {
     const { isLiked, isAdded } = useSelector((state) => state.usedbookr_product)
 
     const owlOption = {
         items: 5,
-        nav: false,
+        dots: false,
         // autoplay: true,
         autoplayTimeout: 3000,
         loop: true,
         margin: 10,
+        autoWidth: true,
         responsive: {
             0: {
                 items: 1,
             },
             600: {
-                items: 1,
+                items: 2,
             },
             800: {
                 items: 2,
@@ -48,7 +50,6 @@ const BestSeller = () => {
     };
 
     const product_like = () => {
-        console.log("ajith")
     }
     const product_add = () => {
 
@@ -57,12 +58,12 @@ const BestSeller = () => {
 
     }
     return (
-        <div className='py-5'>
+        <div className='py-lg-5 py-4 bestseller'>
             <OwlCarousel className="owl-theme" {...owlOption}>
                 <div className='seller-book position-relative'>
                     <div className='best-seller'>
-                        <img src={book1} height='300px' className='w-100 p-4' />
-                        <span className='selles-offer'>Sales 50%</span>
+                        <img src={book1} height='300px' className='w-100 p-lg-4 p-md-2 p-0' />
+                        <span className='selles-offer'>offer 50%</span>
                         <span className='like-position float-end m-2'>
                             <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
                         </span>
@@ -71,7 +72,7 @@ const BestSeller = () => {
                             <h5>By Lisa Jewall</h5>
                             <div className='d-flex '>
                                 <div className='rate-details'>
-                                    <span className='new-rate'>$ 299</span> <span className='ps-2 old-rate'>$ 440</span><br />
+                                    <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
                                     <Rating
                                         initialRating={5}
                                         emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
@@ -89,8 +90,8 @@ const BestSeller = () => {
                 </div>
                 <div className='seller-book position-relative'>
                     <div className='best-seller'>
-                        <img src={book2} height='300px' className='w-100  p-4' />
-                        <span className='selles-offer'>Sales 50%</span>
+                        <img src={book2} height='300px' className='w-100  p-lg-4 p-md-2 p-0' />
+                        <span className='selles-offer'>offer 50%</span>
                         <span className='like-position float-end m-2'>
                             <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
                         </span>
@@ -99,7 +100,7 @@ const BestSeller = () => {
                             <h5>By Lisa Jewalla</h5>
                             <div className='d-flex '>
                                 <div className='rate-details'>
-                                    <span className='new-rate'>$ 299</span> <span className='ps-2 old-rate'>$ 440</span><br />
+                                    <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
                                     <Rating
                                         initialRating={5}
                                         emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
@@ -116,6 +117,12 @@ const BestSeller = () => {
                     </div>
                 </div>
             </OwlCarousel>
+            {/* <OwlCarousel className="owl-theme" {...owlOption}>
+                {books.map((book, index) => (
+                    <div key={index} className='seller-book position-relative'>
+                    </div>
+                ))}
+            </OwlCarousel> */}
         </div>
 
     );

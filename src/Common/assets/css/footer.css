@@ -47,7 +47,7 @@
 
 .footer-list ul li {
     display: inline-block;
-    padding: 0px 20px;
+    padding: 0px 15px;
     border-right: 2px solid #FFF;
     color: #FFF;
     font-family: Poppins;
@@ -73,7 +73,7 @@
 @media only screen and (min-width: 556px) and (max-width: 767px) {
     
     .footer-list ul li {
-        padding: 0px 2px;
+        padding: 0px 10px;
     }
 
 }

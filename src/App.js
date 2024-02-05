@@ -25,6 +25,7 @@ import Orderprocess from './Domain/Orderprocess';
 import Forgetpassword from './Domain/Forgetpassword';
 import Resetpassword from './Domain/Resetpassword';
 import Fdfd from './Domain/Fdfd';
+import Autherfliter from './Domain/Authorfliter';
 
 function App() {
    
@@ -67,6 +68,7 @@ function App() {
         <Route path='/Placeorder' element={<Placeorder />}/>
         <Route path='/ProductOrderForm' element={<ProductOrderForm />}/>
         <Route path='/Orderprocess' element={<Orderprocess />} />
+        <Route path='/authors' element={<Autherfliter />} />
         <Route path='/Fdfd' element={<Fdfd />} />
       </Routes>
     </BrowserRouter>

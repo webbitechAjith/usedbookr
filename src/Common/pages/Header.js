@@ -244,7 +244,7 @@ function Header() {
                                         </div>
                                     </div>
                                     <div className='col-2 p-0 d-md-none d-sm-none logo-fixed'>
-                                        <a className="navbar-brand d-lg-none d-md-none" href="#"><img src={mobilelogo} className='w-100'/></a>
+                                        <a className="navbar-brand d-lg-none d-md-none" href="#"><img src={mobilelogo} className='w-100' /></a>
                                     </div>
                                 </div>
 
@@ -280,16 +280,66 @@ function Header() {
                                                             About Us
                                                         </NavLink>
                                                     </li>
-                                                    <li className="nav-item dropdown">
+                                                    <li className="nav-item dropdown mega-menu-li">
                                                         <a className="nav-link dropdown-toggle option-list" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            Shop Book
+                                                            SHOP BOOK
                                                             <FontAwesomeIcon icon={faChevronDown} style={{ color: "#fafafa", }} className='ps-2' />
                                                         </a>
-                                                        <ul className="dropdown-menu">
-                                                            <li><a className="dropdown-item" href="#">Action</a></li>
-                                                            <li><a className="dropdown-item" href="#">Another action</a></li>
-                                                            <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                                        </ul>
+                                                        <div class="dropdown-menu drop-width w-100" aria-labelledby="navbarDropdown">
+                                                            <div class="container">
+                                                                <div class="row my-4">
+                                                                    <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+                                                                        <div class="list-group list-group-flush">
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Children
+                                                                            </NavLink>
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Education
+                                                                            </NavLink>
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Political
+                                                                            </NavLink>
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Magazines
+                                                                            </NavLink>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+                                                                        <div class="list-group list-group-flush">
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Children
+                                                                            </NavLink>
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Education
+                                                                            </NavLink>
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Political
+                                                                            </NavLink>
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Magazines
+                                                                            </NavLink>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+                                                                        <div class="list-group list-group-flush">
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Children
+                                                                            </NavLink>
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Education
+                                                                            </NavLink>
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Political
+                                                                            </NavLink>
+                                                                            <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                                Magazines
+                                                                            </NavLink>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </li>
 
                                                     <li className='d-flex align-items-center'>
@@ -313,7 +363,7 @@ function Header() {
                                 }
                                 <div className='w-100 d-lg-block d-none'>
                                     <div className='row m-0 w-100'>
-                                        <div className='col-lg-8'>
+                                        <div className='col-lg-8 align-self-center'>
                                             <ul className="navbar-nav py-2 nav-content">
                                                 <li className='nav-item d-flex align-items-center'>
                                                     <NavLink exact to={{ pathname: '/' }} className={`${pathname === '/' ? 'active' : 'custom-active'} text-decoration-none`}>
@@ -325,16 +375,66 @@ function Header() {
                                                         About Us
                                                     </NavLink>
                                                 </li>
-                                                <li className="nav-item dropdown">
+                                                <li className="nav-item dropdown mega-menu-li">
                                                     <a className="nav-link dropdown-toggle option-list" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Shop Book
+                                                        SHOP BOOK
                                                         <FontAwesomeIcon icon={faChevronDown} style={{ color: "#fafafa", }} className='ps-2' />
                                                     </a>
-                                                    <ul className="dropdown-menu">
-                                                        <li><a className="dropdown-item" href="#">Action</a></li>
-                                                        <li><a className="dropdown-item" href="#">Another action</a></li>
-                                                        <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                                    </ul>
+                                                    <div class="dropdown-menu drop-width w-100" aria-labelledby="navbarDropdown">
+                                                        <div class="container">
+                                                            <div class="row my-4">
+                                                                <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+                                                                    <div class="list-group list-group-flush">
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Children
+                                                                        </NavLink>
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Education
+                                                                        </NavLink>
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Political
+                                                                        </NavLink>
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Magazines
+                                                                        </NavLink>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+                                                                    <div class="list-group list-group-flush">
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Children
+                                                                        </NavLink>
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Education
+                                                                        </NavLink>
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Political
+                                                                        </NavLink>
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Magazines
+                                                                        </NavLink>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+                                                                    <div class="list-group list-group-flush">
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Children
+                                                                        </NavLink>
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Education
+                                                                        </NavLink>
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Political
+                                                                        </NavLink>
+                                                                        <NavLink exact to="/package" className={`${pathname === '/package' ? 'active' : 'list-group-item list-group-item-action'} text-decoration-none`}>
+                                                                            Magazines
+                                                                        </NavLink>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </li>
 
                                                 <li className='d-flex align-items-center'>

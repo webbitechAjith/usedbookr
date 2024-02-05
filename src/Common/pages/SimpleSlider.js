@@ -19,11 +19,12 @@ const SimpleSlider = () => {
 
     const owlOptions = {
         items: 5,
-        nav:false,
+        dots:false,
         autoplay:true,
         autoplayTimeout: 3000,
         loop: true,
         margin: 10,
+        autoWidth: true,
         responsive: {
             0: {
                 items: 1,

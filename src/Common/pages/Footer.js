@@ -66,7 +66,7 @@ function Footer() {
                                 <p>Copyright ©2024 Usedbookr. All Rights Reserved</p>
                             </div>
                             <div className='col-lg-6 col-12 my-lg-0 my-2 footer-list '>
-                                <ul className='text-center mb-0'>
+                                <ul className='text-center mb-0 p-0'>
                                     <li>Track Order</li>
                                     <li>FAQ’s</li>
                                     <li>About</li>

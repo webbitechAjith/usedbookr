@@ -21,6 +21,7 @@ function Aside() {
     const [topDetails, setTopDetails] = useState(0); // Initial value
     const [outDoor, setoutDoor] = useState(0); // Initial value
     const [value, setValue] = useState([2, 10]);
+    const [disCount, setDisCount] = useState([0, 70]);
 
 
     const dispatch = useDispatch();
@@ -29,9 +30,10 @@ function Aside() {
     // Price Changing State when volume increases/decreases 
     const rangeSelector = (event, newValue) => {
         setValue(newValue);
-        console.log(newValue)
     };
-
+    const discountRange = (event,newValue) =>{
+        setDisCount(newValue)
+    }
     // const handleFilterChange = (minPrice, maxPrice) => {
     //     setFilter({ minPrice, maxPrice });
     // };
@@ -263,6 +265,24 @@ function Aside() {
                                     <div className="accordion-item border-0">
                                         <h2 className="accordion-header">
                                             <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
+                                                <b>Discount</b>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseSix" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                            <div className='container-90'>
+                                                <Slider
+                                                    value={disCount}
+                                                    onChange={discountRange}
+                                                    valueLabelDisplay="auto"
+                                                />
+                                                <h6>Discount is between {disCount[0]}% - {disCount[1]}%</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr className='m-0' />
+                                    <div className="accordion-item border-0">
+                                        <h2 className="accordion-header">
+                                            <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
                                                 <b>Price</b>
                                             </button>
                                         </h2>
@@ -273,7 +293,7 @@ function Aside() {
                                                     onChange={rangeSelector}
                                                     valueLabelDisplay="auto"
                                                 />
-                                                Price is between {value[0]} - {value[1]}
+                                                <h6 className='py-2'>Price is between {value[0]} - {value[1]}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -482,28 +502,47 @@ function Aside() {
                             <div className="accordion-item border-0">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
-                                        <b>Price</b>
+                                        <b>Discount</b>
                                     </button>
                                 </h2>
                                 <div id="collapseSix" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                     <div className='container-90'>
                                         <Slider
-                                            value={value}
-                                            onChange={rangeSelector}
+                                            value={disCount}
+                                            onChange={discountRange}
                                             valueLabelDisplay="auto"
                                         />
-                                        Price is between {value[0]} - {value[1]}
+                        
+                                        <h6 className='py-2'>Discount is between {disCount[0]}% - {disCount[1]}%</h6>
                                     </div>
                                 </div>
                             </div>
                             <hr className='m-0' />
                             <div className="accordion-item border-0">
                                 <h2 className="accordion-header">
-                                    <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour">
+                                    <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseThree">
+                                        <b>Price</b>
+                                    </button>
+                                </h2>
+                                <div id="collapseSeven" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                    <div className='container-90'>
+                                        <Slider
+                                            value={value}
+                                            onChange={rangeSelector}
+                                            valueLabelDisplay="auto"
+                                        />
+                                        <h6>Price is between {value[0]} - {value[1]}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr className='m-0' />
+                            <div className="accordion-item border-0">
+                                <h2 className="accordion-header">
+                                    <button className="accordion-button collapsed btn-option" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseFour">
                                         <b>Rating</b>
                                     </button>
                                 </h2>
-                                <div id="collapseSeven" className="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                <div id="collapseEight" className="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                     <div className="accordion-body">
                                         <div className="mb-3 form-check">
                                             <input type="checkbox" className="form-check-input" id="exampleCheck1" />

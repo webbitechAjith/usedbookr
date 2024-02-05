@@ -417,6 +417,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     line-height: 16px;
+    cursor: pointer;
 }
 
 .view-all:hover {
@@ -528,7 +529,9 @@ body {
 }
 
 .plant-store .circle {
-    padding: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
     border-radius: 50%;
     background: #FFF;
 }
@@ -613,7 +616,8 @@ body {
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
-    text-decoration-line: strikethrough;
+    /* text-decoration-line: strikethrough; */
+    text-decoration: line-through;
 }
 
 /* contact section css start  */
@@ -692,84 +696,158 @@ body {
     line-height: 24px;
 }
 
+.owl-theme {
+    cursor: pointer;
+}
 
+/* .bestseller .owl-theme .active{
+    width: auto !important;
+    max-width: 100%;
+}
+.owl-theme .cloned{
+    display: none;
+} */
+.owl-item .active{
+    width: auto !important;
+}
+
+/* authorname css start  */
+.author-search {
+    padding: 20px;
+    background: #4F45A1;
+    margin-bottom: 10px;
+}
+
+.author-search label {
+    color: #FFF !important;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px !important;
+    letter-spacing: 0.01em;
+    text-align: left;
+
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    padding: 7px 5px;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin: 0 auto;
+}
 
 @media only screen and (min-width: 767px) and (max-width: 992px) {
-    .container-90{
+    .container-90 {
         max-width: 98% !important;
     }
+
     /* Home page css start  */
     .product-title {
         font-size: 35px;
         line-height: 45px !important;
     }
+
     /* author css start  */
     .author-card {
-        width: 75% !important;
+        width: 100% !important;
     }
+
     .author5 {
         width: 20% !important;
-        margin: 25px 10px;
+        margin: 0 auto;
     }
-   
+
+    .author5 button {
+        padding: 10px;
+    }
+
 }
+
 @media only screen and (min-width: 556px) and (max-width: 767px) {
+
     /* home css start  */
     .product-title {
         font-size: 30px;
         line-height: 40px !important;
     }
+
     /* author css start  */
     .author-card {
-        width: 70% !important;
+        width: 100% !important;
     }
+
     .author5 {
         width: 25% !important;
-        margin: 25px 10px;
+        margin: 0 auto;
     }
+
+    .author5 button {
+        padding: 10px;
+    }
+
     .plant-store h3 {
         color: #FFF;
         font-size: 30px;
         font-weight: 600;
         line-height: 40px !important;
     }
+
     .contact-box .input-set button {
         width: 40% !important;
     }
-   
+
 }
+
 @media only screen and (min-width: 300px) and (max-width: 556px) {
+
     /* home css start  */
     .product-title {
         font-size: 22px;
         line-height: 32px !important;
     }
+
     /* author css start  */
     .author-card {
-        width: 60% !important;
+        width: 100% !important;
     }
+
     .author5 {
-        width: 25% !important;
-        margin: 40px 10px;
+        width: 30% !important;
+        margin: 0 auto;
     }
+
     .author5 button {
-        padding: 10px 20px;
+        padding: 10px;
         font-size: 14px !important;
         line-height: 24px !important;
     }
+
     .plant-store h3 {
         color: #FFF;
-        font-size: 30px;
+        font-size: 24px;
         font-weight: 600;
-        line-height: 40px !important;
+        line-height: 34px !important;
     }
+
     .viewall {
         padding: 5px 15px;
         font-size: 14px;
         line-height: 24px !important;
     }
+
     .contact-box .input-set button {
         width: 40% !important;
     }
-   
+
 }

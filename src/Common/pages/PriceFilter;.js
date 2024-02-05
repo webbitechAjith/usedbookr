@@ -67,7 +67,6 @@ const [value, setValue] = useState([2,10]);
 // Changing State when volume increases/decreases 
 const rangeSelector = (event, newValue) => { 
 	setValue(newValue); 
-	console.log(newValue) 
 }; 
 
 return ( 

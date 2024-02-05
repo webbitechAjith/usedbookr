@@ -172,7 +172,7 @@ function Description() {
         dispatch(setClass1Hide(false))
         window.scrollTo(0, 0);
     }, [])
- 
+
     return (
         <div className='description-section'>
             <Header />
@@ -202,10 +202,16 @@ function Description() {
                                 <hr />
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis nunc a molestie dictum. Mauris venenatis, felis scelerisque aliquet lacinia, nulla nisi venenatis odio, id blandit mauris ipsum id sapien.</p>
                                 <div className='condition-level my-3'>
+                                    <h1><span>Binding type</span></h1>
+                                    <button className='very'>Paperback</button>
+                                    <button className='very mx-2'>Hardcover</button>
+                                </div>
+                                <div className='condition-level my-3'>
                                     <h1><span>Condition</span> - Very Good (100+ in Stock)</h1>
                                     <button className='very'>Very good</button>
                                     <button className='very mx-2'>Good</button>
                                     <button className='very'>Well Read</button>
+                                    <button className='very ms-2'>Bad</button>
                                 </div>
                                 <span className="mb-3 count-btn">
                                     <button
@@ -263,6 +269,11 @@ function Description() {
                             <button className='sales-offer'>50% off</button>
                             <hr />
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis nunc a molestie dictum. Mauris venenatis, felis scelerisque aliquet lacinia, nulla nisi venenatis odio, id blandit mauris ipsum id sapien.</p>
+                            <div className='condition-level my-3'>
+                                <h1><span>Binding type</span></h1>
+                                <button className='very'>Paperback</button>
+                                <button className='very mx-2'>Hardcover</button>
+                            </div>
                             <div className='condition-level my-3'>
                                 <h1><span>Condition</span> - Very Good (100+ in Stock)</h1>
                                 <button className='very'>Very good</button>
@@ -326,11 +337,17 @@ function Description() {
                             <button className='sales-offer'>50% off</button>
                             <hr />
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis nunc a molestie dictum. Mauris venenatis, felis scelerisque aliquet lacinia, nulla nisi venenatis odio, id blandit mauris ipsum id sapien.</p>
+                            <div className='condition-level my-3'>
+                                <h1><span>Binding type</span></h1>
+                                <button className='very'>Paperback</button>
+                                <button className='very mx-2'>Hardcover</button>
+                            </div>
                             <div className='condition-level my-4'>
                                 <h1><span>Condition</span> - Very Good (100+ in Stock)</h1>
                                 <button className='very'>Very good</button>
                                 <button className='very mx-2'>Good</button>
                                 <button className='very'>Well Read</button>
+                                <button className='very'>Bad</button>
                             </div>
                             <>
                                 <span className="mb-3 count-btn">
@@ -502,7 +519,7 @@ function Description() {
                                                 <p>{data.relative_time_description}</p>
                                             </div>
                                             <div className='col-12'>
-                                            <p>{data.text}</p>
+                                                <p>{data.text}</p>
                                             </div>
                                         </div>
                                         <hr className='' />
