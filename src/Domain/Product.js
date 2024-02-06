@@ -3,6 +3,7 @@ import Header from '../Common/pages/Header'
 import Footer from '../Common/pages/Footer'
 import Aside from '../Common/pages/Aside'
 import axios from "axios";
+import Rating from 'react-rating';
 
 // image path 
 
@@ -12,6 +13,7 @@ import plant3 from '../Common/assets/image/plant_3.png'
 import rating from '../Common/assets/image/Rating.png'
 import add from '../Common/assets/image/addcard.png'
 import remove from '../Common/assets/image/removecard.png'
+import book1 from '../Common/assets/image/book_1.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -78,6 +80,14 @@ function Product() {
   //   plantproduct();
   // }, []);
   console.log(allplantsDetails)
+  const product_like = () => {
+  }
+  const product_add = () => {
+
+  }
+  const product_remove = () => {
+
+  }
   const pass = (data) => {
     const updatedData = [data];
     dispatch(setproductIdDetails(updatedData))
@@ -89,15 +99,15 @@ function Product() {
   return (
     <div className='product-section'>
       <Header />
-      <div className='product-view container-90'>
+      <div className='product-view'>
         <div className='d-lg-block d-none'>
           <div className='row m-0'>
             <div className='col-3'>
               <Aside />
             </div>
             <div className='col-9'>
-              <div className='product-list mt-5'>
-                <div className='row m-0  py-4'>
+              <div className='product-list my-5'>
+                {/* <div className='row m-0  py-4'>
                   {searchfield ?
                     <>
                       {allplantsDetails && allplantsDetails && filteredProducts.map((data, index) => {
@@ -147,6 +157,348 @@ function Product() {
                       <h1 className='text-center product-title'>No items</h1>
                     </>}
 
+                </div> */}
+                <div className='row m-0'>
+                  <div className='col-lg-4 col-md-4 col-sm-6 col-12 mt-2 d-flex align-self-stretch'>
+                    {/* <div className='normal-box box-view'>
+                      <button className='sales-offer'>offer50%</button>
+                      <span
+                        className='float-end'
+                        onClick={() => handleLikeClick(1)}
+                      >
+                        <img
+                          src={totallikes.includes(1) ? likes : unlike}
+                          alt="Like Button"
+                        />
+                      </span>
+                      <img src={book1} className='w-100 py-2' />
+                      <div class="row m-0 product-details">
+                        <div class="col-9">
+                          <h5>Book</h5>
+                          <span className='price pe-2'>INR 100</span><span className='text-decoration-line-through rate'>INR 230</span>
+                          <img src={rating} className='ms-2' />
+                        </div>
+                        <div class="col-3">
+                          <span
+                            className='float-end'
+                            id={1} value={1}
+                            onClick={() => handleShopClick(1,1,1)}
+                          >
+                            <img
+                              src={totalshops.includes(0) ? add : remove}
+                              alt="Shop Button"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-12 d-flex align-items-center justify-content-end mt-3'>
+                        <button className='float-end sales-offer' onClick={() => pass(1)}>view all</button>
+
+                      </div>
+                    </div> */}
+                    <div className='bestseller'>
+                      <div className='seller-book position-relative'>
+                        <div className='best-seller'>
+                          <img src={book1} height='300px' className='w-100 p-lg-4 p-md-2 p-0' />
+                          <span className='selles-offer'>offer 50%</span>
+                          <span className='like-position float-end m-2'>
+                            <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
+                          </span>
+                          <div className='book-details p-3'>
+                            <h1>Dual Ring </h1>
+                            <h5>By Lisa Jewall</h5>
+                            <div className='d-flex '>
+                              <div className='rate-details'>
+                                <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
+                                <Rating
+                                  initialRating={5}
+                                  emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                  fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                  readonly={true}
+                                />
+                              </div>
+                              <div className='ms-auto'>
+                                {isAdded ? (<><img src={add} alt="Like Button" onClick={() => product_add()} /></>) : (<> <img src={remove} alt="Remove Button" onClick={() => product_remove()} /> </>)}
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-lg-4 col-md-4 col-sm-6 col-12 mt-2 d-flex align-self-stretch'>
+                    {/* <div className='normal-box box-view'>
+                      <button className='sales-offer'>offer50%</button>
+                      <span
+                        className='float-end'
+                        onClick={() => handleLikeClick(1)}
+                      >
+                        <img
+                          src={totallikes.includes(1) ? likes : unlike}
+                          alt="Like Button"
+                        />
+                      </span>
+                      <img src={book1} className='w-100 py-2' />
+                      <div class="row m-0 product-details">
+                        <div class="col-9">
+                          <h5>Book</h5>
+                          <span className='price pe-2'>INR 100</span><span className='text-decoration-line-through rate'>INR 230</span>
+                          <img src={rating} className='ms-2' />
+                        </div>
+                        <div class="col-3">
+                          <span
+                            className='float-end'
+                            id={1} value={1}
+                            onClick={() => handleShopClick(1,1,1)}
+                          >
+                            <img
+                              src={totalshops.includes(0) ? add : remove}
+                              alt="Shop Button"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-12 d-flex align-items-center justify-content-end mt-3'>
+                        <button className='float-end sales-offer' onClick={() => pass(1)}>view all</button>
+
+                      </div>
+                    </div> */}
+                    <div className='bestseller'>
+                      <div className='seller-book position-relative'>
+                        <div className='best-seller'>
+                          <img src={book1} height='300px' className='w-100 p-lg-4 p-md-2 p-0' />
+                          <span className='selles-offer'>offer 50%</span>
+                          <span className='like-position float-end m-2'>
+                            <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
+                          </span>
+                          <div className='book-details p-3'>
+                            <h1>Dual Ring </h1>
+                            <h5>By Lisa Jewall</h5>
+                            <div className='d-flex '>
+                              <div className='rate-details'>
+                                <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
+                                <Rating
+                                  initialRating={5}
+                                  emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                  fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                  readonly={true}
+                                />
+                              </div>
+                              <div className='ms-auto'>
+                                {isAdded ? (<><img src={add} alt="Like Button" onClick={() => product_add()} /></>) : (<> <img src={remove} alt="Remove Button" onClick={() => product_remove()} /> </>)}
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-lg-4 col-md-4 col-sm-6 col-12 mt-2 d-flex align-self-stretch'>
+                    {/* <div className='normal-box box-view'>
+                      <button className='sales-offer'>offer50%</button>
+                      <span
+                        className='float-end'
+                        onClick={() => handleLikeClick(1)}
+                      >
+                        <img
+                          src={totallikes.includes(1) ? likes : unlike}
+                          alt="Like Button"
+                        />
+                      </span>
+                      <img src={book1} className='w-100 py-2' />
+                      <div class="row m-0 product-details">
+                        <div class="col-9">
+                          <h5>Book</h5>
+                          <span className='price pe-2'>INR 100</span><span className='text-decoration-line-through rate'>INR 230</span>
+                          <img src={rating} className='ms-2' />
+                        </div>
+                        <div class="col-3">
+                          <span
+                            className='float-end'
+                            id={1} value={1}
+                            onClick={() => handleShopClick(1,1,1)}
+                          >
+                            <img
+                              src={totalshops.includes(0) ? add : remove}
+                              alt="Shop Button"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-12 d-flex align-items-center justify-content-end mt-3'>
+                        <button className='float-end sales-offer' onClick={() => pass(1)}>view all</button>
+
+                      </div>
+                    </div> */}
+                    <div className='bestseller'>
+                      <div className='seller-book position-relative'>
+                        <div className='best-seller'>
+                          <img src={book1} height='300px' className='w-100 p-lg-4 p-md-2 p-0' />
+                          <span className='selles-offer'>offer 50%</span>
+                          <span className='like-position float-end m-2'>
+                            <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
+                          </span>
+                          <div className='book-details p-3'>
+                            <h1>Dual Ring </h1>
+                            <h5>By Lisa Jewall</h5>
+                            <div className='d-flex '>
+                              <div className='rate-details'>
+                                <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
+                                <Rating
+                                  initialRating={5}
+                                  emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                  fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                  readonly={true}
+                                />
+                              </div>
+                              <div className='ms-auto'>
+                                {isAdded ? (<><img src={add} alt="Like Button" onClick={() => product_add()} /></>) : (<> <img src={remove} alt="Remove Button" onClick={() => product_remove()} /> </>)}
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-lg-4 col-md-4 col-sm-6 col-12 mt-2 d-flex align-self-stretch'>
+                    {/* <div className='normal-box box-view'>
+                      <button className='sales-offer'>offer50%</button>
+                      <span
+                        className='float-end'
+                        onClick={() => handleLikeClick(1)}
+                      >
+                        <img
+                          src={totallikes.includes(1) ? likes : unlike}
+                          alt="Like Button"
+                        />
+                      </span>
+                      <img src={book1} className='w-100 py-2' />
+                      <div class="row m-0 product-details">
+                        <div class="col-9">
+                          <h5>Book</h5>
+                          <span className='price pe-2'>INR 100</span><span className='text-decoration-line-through rate'>INR 230</span>
+                          <img src={rating} className='ms-2' />
+                        </div>
+                        <div class="col-3">
+                          <span
+                            className='float-end'
+                            id={1} value={1}
+                            onClick={() => handleShopClick(1,1,1)}
+                          >
+                            <img
+                              src={totalshops.includes(0) ? add : remove}
+                              alt="Shop Button"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-12 d-flex align-items-center justify-content-end mt-3'>
+                        <button className='float-end sales-offer' onClick={() => pass(1)}>view all</button>
+
+                      </div>
+                    </div> */}
+                    <div className='bestseller'>
+                      <div className='seller-book position-relative'>
+                        <div className='best-seller'>
+                          <img src={book1} height='300px' className='w-100 p-lg-4 p-md-2 p-0' />
+                          <span className='selles-offer'>offer 50%</span>
+                          <span className='like-position float-end m-2'>
+                            <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
+                          </span>
+                          <div className='book-details p-3'>
+                            <h1>Dual Ring </h1>
+                            <h5>By Lisa Jewall</h5>
+                            <div className='d-flex '>
+                              <div className='rate-details'>
+                                <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
+                                <Rating
+                                  initialRating={5}
+                                  emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                  fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                  readonly={true}
+                                />
+                              </div>
+                              <div className='ms-auto'>
+                                {isAdded ? (<><img src={add} alt="Like Button" onClick={() => product_add()} /></>) : (<> <img src={remove} alt="Remove Button" onClick={() => product_remove()} /> </>)}
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-lg-4 col-md-4 col-sm-6 col-12 mt-2 d-flex align-self-stretch'>
+                    {/* <div className='normal-box box-view'>
+                      <button className='sales-offer'>offer50%</button>
+                      <span
+                        className='float-end'
+                        onClick={() => handleLikeClick(1)}
+                      >
+                        <img
+                          src={totallikes.includes(1) ? likes : unlike}
+                          alt="Like Button"
+                        />
+                      </span>
+                      <img src={book1} className='w-100 py-2' />
+                      <div class="row m-0 product-details">
+                        <div class="col-9">
+                          <h5>Book</h5>
+                          <span className='price pe-2'>INR 100</span><span className='text-decoration-line-through rate'>INR 230</span>
+                          <img src={rating} className='ms-2' />
+                        </div>
+                        <div class="col-3">
+                          <span
+                            className='float-end'
+                            id={1} value={1}
+                            onClick={() => handleShopClick(1,1,1)}
+                          >
+                            <img
+                              src={totalshops.includes(0) ? add : remove}
+                              alt="Shop Button"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-12 d-flex align-items-center justify-content-end mt-3'>
+                        <button className='float-end sales-offer' onClick={() => pass(1)}>view all</button>
+
+                      </div>
+                    </div> */}
+                    <div className='bestseller'>
+                      <div className='seller-book position-relative'>
+                        <div className='best-seller'>
+                          <img src={book1} height='300px' className='w-100 p-lg-4 p-md-2 p-0' />
+                          <span className='selles-offer'>offer 50%</span>
+                          <span className='like-position float-end m-2'>
+                            <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
+                          </span>
+                          <div className='book-details p-3'>
+                            <h1>Dual Ring </h1>
+                            <h5>By Lisa Jewall</h5>
+                            <div className='d-flex '>
+                              <div className='rate-details'>
+                                <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
+                                <Rating
+                                  initialRating={5}
+                                  emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                  fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                  readonly={true}
+                                />
+                              </div>
+                              <div className='ms-auto'>
+                                {isAdded ? (<><img src={add} alt="Like Button" onClick={() => product_add()} /></>) : (<> <img src={remove} alt="Remove Button" onClick={() => product_remove()} /> </>)}
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -161,9 +513,9 @@ function Product() {
             <div className='col-12'>
               <Aside />
             </div>
-            <div className='col-12'>
-              <div className='product-list mt-5'>
-                <div className='row m-0  py-4'>
+            <div className='col-12 p-0'>
+              <div className='row m-0 product-list'>
+                {/* <div className='row m-0  py-4'>
                   {searchfield ?
                     <>
                       {allplantsDetails && allplantsDetails && filteredProducts.map((data, index) => {
@@ -213,8 +565,347 @@ function Product() {
                       <h1 className='text-center product-title'>No items</h1>
                     </>}
 
-                </div>
+                </div> */}
+                <div className='col-lg-4 col-md-4 col-sm-6 col-12 mt-2 d-flex align-self-stretch'>
+                  {/* <div className='normal-box box-view'>
+                      <button className='sales-offer'>offer50%</button>
+                      <span
+                        className='float-end'
+                        onClick={() => handleLikeClick(1)}
+                      >
+                        <img
+                          src={totallikes.includes(1) ? likes : unlike}
+                          alt="Like Button"
+                        />
+                      </span>
+                      <img src={book1} className='w-100 py-2' />
+                      <div class="row m-0 product-details">
+                        <div class="col-9">
+                          <h5>Book</h5>
+                          <span className='price pe-2'>INR 100</span><span className='text-decoration-line-through rate'>INR 230</span>
+                          <img src={rating} className='ms-2' />
+                        </div>
+                        <div class="col-3">
+                          <span
+                            className='float-end'
+                            id={1} value={1}
+                            onClick={() => handleShopClick(1,1,1)}
+                          >
+                            <img
+                              src={totalshops.includes(0) ? add : remove}
+                              alt="Shop Button"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-12 d-flex align-items-center justify-content-end mt-3'>
+                        <button className='float-end sales-offer' onClick={() => pass(1)}>view all</button>
 
+                      </div>
+                    </div> */}
+                  <div className='bestseller'>
+                    <div className='seller-book position-relative'>
+                      <div className='best-seller'>
+                        <img src={book1} height='300px' className='w-100 p-lg-4 p-md-2 p-0' />
+                        <span className='selles-offer'>offer 50%</span>
+                        <span className='like-position float-end m-2'>
+                          <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
+                        </span>
+                        <div className='book-details p-3'>
+                          <h1>Dual Ring </h1>
+                          <h5>By Lisa Jewall</h5>
+                          <div className='d-flex '>
+                            <div className='rate-details'>
+                              <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
+                              <Rating
+                                initialRating={5}
+                                emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                readonly={true}
+                              />
+                            </div>
+                            <div className='ms-auto'>
+                              {isAdded ? (<><img src={add} alt="Like Button" onClick={() => product_add()} /></>) : (<> <img src={remove} alt="Remove Button" onClick={() => product_remove()} /> </>)}
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className='col-lg-4 col-md-4 col-sm-6 col-12 mt-2 d-flex align-self-stretch'>
+                  {/* <div className='normal-box box-view'>
+                      <button className='sales-offer'>offer50%</button>
+                      <span
+                        className='float-end'
+                        onClick={() => handleLikeClick(1)}
+                      >
+                        <img
+                          src={totallikes.includes(1) ? likes : unlike}
+                          alt="Like Button"
+                        />
+                      </span>
+                      <img src={book1} className='w-100 py-2' />
+                      <div class="row m-0 product-details">
+                        <div class="col-9">
+                          <h5>Book</h5>
+                          <span className='price pe-2'>INR 100</span><span className='text-decoration-line-through rate'>INR 230</span>
+                          <img src={rating} className='ms-2' />
+                        </div>
+                        <div class="col-3">
+                          <span
+                            className='float-end'
+                            id={1} value={1}
+                            onClick={() => handleShopClick(1,1,1)}
+                          >
+                            <img
+                              src={totalshops.includes(0) ? add : remove}
+                              alt="Shop Button"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-12 d-flex align-items-center justify-content-end mt-3'>
+                        <button className='float-end sales-offer' onClick={() => pass(1)}>view all</button>
+
+                      </div>
+                    </div> */}
+                  <div className='bestseller'>
+                    <div className='seller-book position-relative'>
+                      <div className='best-seller'>
+                        <img src={book1} height='300px' className='w-100 p-lg-4 p-md-2 p-0' />
+                        <span className='selles-offer'>offer 50%</span>
+                        <span className='like-position float-end m-2'>
+                          <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
+                        </span>
+                        <div className='book-details p-3'>
+                          <h1>Dual Ring </h1>
+                          <h5>By Lisa Jewall</h5>
+                          <div className='d-flex '>
+                            <div className='rate-details'>
+                              <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
+                              <Rating
+                                initialRating={5}
+                                emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                readonly={true}
+                              />
+                            </div>
+                            <div className='ms-auto'>
+                              {isAdded ? (<><img src={add} alt="Like Button" onClick={() => product_add()} /></>) : (<> <img src={remove} alt="Remove Button" onClick={() => product_remove()} /> </>)}
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className='col-lg-4 col-md-4 col-sm-6 col-12 mt-2 d-flex align-self-stretch'>
+                  {/* <div className='normal-box box-view'>
+                      <button className='sales-offer'>offer50%</button>
+                      <span
+                        className='float-end'
+                        onClick={() => handleLikeClick(1)}
+                      >
+                        <img
+                          src={totallikes.includes(1) ? likes : unlike}
+                          alt="Like Button"
+                        />
+                      </span>
+                      <img src={book1} className='w-100 py-2' />
+                      <div class="row m-0 product-details">
+                        <div class="col-9">
+                          <h5>Book</h5>
+                          <span className='price pe-2'>INR 100</span><span className='text-decoration-line-through rate'>INR 230</span>
+                          <img src={rating} className='ms-2' />
+                        </div>
+                        <div class="col-3">
+                          <span
+                            className='float-end'
+                            id={1} value={1}
+                            onClick={() => handleShopClick(1,1,1)}
+                          >
+                            <img
+                              src={totalshops.includes(0) ? add : remove}
+                              alt="Shop Button"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-12 d-flex align-items-center justify-content-end mt-3'>
+                        <button className='float-end sales-offer' onClick={() => pass(1)}>view all</button>
+
+                      </div>
+                    </div> */}
+                  <div className='bestseller'>
+                    <div className='seller-book position-relative'>
+                      <div className='best-seller'>
+                        <img src={book1} height='300px' className='w-100 p-lg-4 p-md-2 p-0' />
+                        <span className='selles-offer'>offer 50%</span>
+                        <span className='like-position float-end m-2'>
+                          <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
+                        </span>
+                        <div className='book-details p-3'>
+                          <h1>Dual Ring </h1>
+                          <h5>By Lisa Jewall</h5>
+                          <div className='d-flex '>
+                            <div className='rate-details'>
+                              <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
+                              <Rating
+                                initialRating={5}
+                                emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                readonly={true}
+                              />
+                            </div>
+                            <div className='ms-auto'>
+                              {isAdded ? (<><img src={add} alt="Like Button" onClick={() => product_add()} /></>) : (<> <img src={remove} alt="Remove Button" onClick={() => product_remove()} /> </>)}
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className='col-lg-4 col-md-4 col-sm-6 col-12 mt-2 d-flex align-self-stretch'>
+                  {/* <div className='normal-box box-view'>
+                      <button className='sales-offer'>offer50%</button>
+                      <span
+                        className='float-end'
+                        onClick={() => handleLikeClick(1)}
+                      >
+                        <img
+                          src={totallikes.includes(1) ? likes : unlike}
+                          alt="Like Button"
+                        />
+                      </span>
+                      <img src={book1} className='w-100 py-2' />
+                      <div class="row m-0 product-details">
+                        <div class="col-9">
+                          <h5>Book</h5>
+                          <span className='price pe-2'>INR 100</span><span className='text-decoration-line-through rate'>INR 230</span>
+                          <img src={rating} className='ms-2' />
+                        </div>
+                        <div class="col-3">
+                          <span
+                            className='float-end'
+                            id={1} value={1}
+                            onClick={() => handleShopClick(1,1,1)}
+                          >
+                            <img
+                              src={totalshops.includes(0) ? add : remove}
+                              alt="Shop Button"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-12 d-flex align-items-center justify-content-end mt-3'>
+                        <button className='float-end sales-offer' onClick={() => pass(1)}>view all</button>
+
+                      </div>
+                    </div> */}
+                  <div className='bestseller'>
+                    <div className='seller-book position-relative'>
+                      <div className='best-seller'>
+                        <img src={book1} height='300px' className='w-100 p-lg-4 p-md-2 p-0' />
+                        <span className='selles-offer'>offer 50%</span>
+                        <span className='like-position float-end m-2'>
+                          <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
+                        </span>
+                        <div className='book-details p-3'>
+                          <h1>Dual Ring </h1>
+                          <h5>By Lisa Jewall</h5>
+                          <div className='d-flex '>
+                            <div className='rate-details'>
+                              <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
+                              <Rating
+                                initialRating={5}
+                                emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                readonly={true}
+                              />
+                            </div>
+                            <div className='ms-auto'>
+                              {isAdded ? (<><img src={add} alt="Like Button" onClick={() => product_add()} /></>) : (<> <img src={remove} alt="Remove Button" onClick={() => product_remove()} /> </>)}
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className='col-lg-4 col-md-4 col-sm-6 col-12 mt-2 d-flex align-self-stretch'>
+                  {/* <div className='normal-box box-view'>
+                      <button className='sales-offer'>offer50%</button>
+                      <span
+                        className='float-end'
+                        onClick={() => handleLikeClick(1)}
+                      >
+                        <img
+                          src={totallikes.includes(1) ? likes : unlike}
+                          alt="Like Button"
+                        />
+                      </span>
+                      <img src={book1} className='w-100 py-2' />
+                      <div class="row m-0 product-details">
+                        <div class="col-9">
+                          <h5>Book</h5>
+                          <span className='price pe-2'>INR 100</span><span className='text-decoration-line-through rate'>INR 230</span>
+                          <img src={rating} className='ms-2' />
+                        </div>
+                        <div class="col-3">
+                          <span
+                            className='float-end'
+                            id={1} value={1}
+                            onClick={() => handleShopClick(1,1,1)}
+                          >
+                            <img
+                              src={totalshops.includes(0) ? add : remove}
+                              alt="Shop Button"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-12 d-flex align-items-center justify-content-end mt-3'>
+                        <button className='float-end sales-offer' onClick={() => pass(1)}>view all</button>
+
+                      </div>
+                    </div> */}
+                  <div className='bestseller'>
+                    <div className='seller-book position-relative'>
+                      <div className='best-seller'>
+                        <img src={book1} height='300px' className='w-100 p-lg-4 p-md-2 p-0' />
+                        <span className='selles-offer'>offer 50%</span>
+                        <span className='like-position float-end m-2'>
+                          <span className={` ${isLiked ? 'likes' : 'unlikes'} `}><img src={isLiked ? likes : unlike} alt="Like Button" onClick={() => product_like()} /></span>
+                        </span>
+                        <div className='book-details p-3'>
+                          <h1>Dual Ring </h1>
+                          <h5>By Lisa Jewall</h5>
+                          <div className='d-flex '>
+                            <div className='rate-details'>
+                              <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
+                              <Rating
+                                initialRating={5}
+                                emptySymbol={<i className="far fa-star" style={{ color: 'lightgray' }}></i>}
+                                fullSymbol={<i className="fas fa-star" style={{ color: '#FFA837' }}></i>}
+                                readonly={true}
+                              />
+                            </div>
+                            <div className='ms-auto'>
+                              {isAdded ? (<><img src={add} alt="Like Button" onClick={() => product_add()} /></>) : (<> <img src={remove} alt="Remove Button" onClick={() => product_remove()} /> </>)}
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

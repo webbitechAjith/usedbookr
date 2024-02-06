@@ -233,13 +233,13 @@ function Description() {
                                 <button className={totalshops.includes(1) ? 'add-card' : 'shop-card'} onClick={() => handleShopClick(1, 2, 3)}>Add to Cart <img src={totalshops.includes(1) ? shop : blackshop} alt='shop' className='mx-2 p-0' /></button>
                                 <span className='like-btn'><img src={totallikes.includes(1) ? likes : unlike} alt='heart' className='mx-2' onClick={() => handleLikeClick(1)} /></span>
                                 <h4 className='cate my-4'>Category:<span className='ms-2'>Lifestyle</span></h4>
-                                <div className='my-3'>
+                                {/* <div className='my-3'>
                                     <span className='icon-plant'>Book Info : </span>
                                     <img src={icon1} className='me-3' />
                                     <img src={icon2} className='me-3' />
                                     <img src={icon3} className='me-3' />
                                     <img src={icon4} className='me-3' />
-                                </div>
+                                </div> */}
                             </>
 
 
@@ -376,13 +376,13 @@ function Description() {
                                 {/* <button className={totalshops.includes(1) ? 'add-card' : 'shop-card'} onClick={() => handleShopClick(1, 2, 3)}>Add to Cart <img src={totalshops.includes(1) ? shop : blackshop} alt='shop' className='mx-2 p-0' /></button> */}
                                 <span className='like-btn'><img src={totallikes.includes(1) ? likes : unlike} alt='heart' className='mx-2' onClick={() => handleLikeClick(1)} /></span>
                                 <h4 className='cate my-4'>Category:<span className='ms-2'>Lifestyle</span></h4>
-                                <div className='my-3'>
+                                {/* <div className='my-3'>
                                     <span className='icon-plant'>Book Info : </span>
                                     <img src={icon1} className='me-3' />
                                     <img src={icon2} className='me-3' />
                                     <img src={icon3} className='me-3' />
                                     <img src={icon4} className='me-3' />
-                                </div>
+                                </div> */}
                                 <div className='text-center'>
                                     {/* <button className='buynow'>Add to Cart <img src={shop} alt='shop' className='mx-2 p-0' /></button> */}
                                     <button className='buynow' onClick={() => buynow()}>Buy Now <FontAwesomeIcon icon={faShop} className='mx-2' /></button>

@@ -218,7 +218,7 @@ function Home() {
                               </div>
                             </div>
                           </div> */}
-                          <img src={discount}  className='w-100'/>
+                          <img src={discount} className='w-100' />
                         </div>
                       </div>
                     </div>
@@ -259,8 +259,7 @@ function Home() {
               <Authors />
             </div>
           </div>
-          <div className='container-90 product-list mt-5 mb-3'>
-            {/* <div className='row m-0'>
+          {/* <div className='row m-0'>
               <div className='col-lg-10 col-md-9 col-8'>
                 <span className='product-title'>Best Sellers in Education Books</span>
               </div>
@@ -268,10 +267,11 @@ function Home() {
                 <span className='float-end viewall' onClick={() => all_product()}>View All<FontAwesomeIcon icon={faArrowRight} style={{ color: '#056839' }} className='ps-2 d-lg-block d-md-block d-sm-block d-none' /></span>
               </div>
             </div> */}
-            <div className='d-lg-block d-none'>
+          <div className='d-lg-block d-none'>
+            <div className='container-90 product-list mt-5 mb-3'>
               <span className='product-title'>Best Sellers in Education Books</span>
               <span className='float-end viewall' onClick={() => all_product()}>View All<FontAwesomeIcon icon={faArrowRight} style={{ color: '#241D60' }} className='ps-2' /></span>
-              <div className='row m-0 py-5'>
+              {/* <div className='row m-0 py-5'>
                 {searchfield ?
                   <>
                     {allplantsDetails && allplantsDetails.map((data, index) => {
@@ -318,11 +318,14 @@ function Home() {
                   </>
                 }
 
-              </div>
+              </div> */}
+              <BestSeller />
             </div>
-            <div className='d-lg-none d-block'>
+          </div>
+          <div className='d-lg-none d-block'>
+            <div className='container-90 product-list mt-5 mb-3'>
               <span className='product-title'>Best Sellers in Education Books</span>
-              <div className='row m-0 py-5'>
+              {/* <div className='row m-0 py-5'>
                 {searchfield ?
                   <>
                     {allplantsDetails && allplantsDetails.map((data, index) => {
@@ -369,9 +372,10 @@ function Home() {
                   </>
                 }
 
-              </div>
+              </div> */}
+              <BestSeller />
               <div className='author5'>
-                <button>View All</button>
+                <button onClick={() => all_product()}>View All</button>
               </div>
             </div>
           </div>
@@ -380,8 +384,8 @@ function Home() {
         <div className='plant-store'>
           <div className='row m-0 p-lg-5 p-md-5 p-1 flex-wrap-reverse'>
             <div className='col-lg-6 col-12 slide-left visible pt-lg-0 pt-4'>
-                <img src={book4} className='image-1 pe-2' />
-                <img src={book5} className='image-2' />
+              <img src={book4} className='image-1 pe-2' />
+              <img src={book5} className='image-2' />
             </div>
             <div className='col-lg-6 col-12 ps-lg-5 ps-md-5 ps-sm-3 ps-0 mt-lg-0 mt-5 slide-right visible'>
               <h3 className='w-lg-50 w-md-50 w-100 mb-4'>100% Trusted Book Store</h3>

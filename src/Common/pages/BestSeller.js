@@ -19,11 +19,13 @@ import unlike from '../assets/image/heart-unlike.png'
 import add from '../assets/image/addcard.png'
 import remove from '../assets/image/removecard.png'
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 
 const BestSeller = () => {
     const { isLiked, isAdded } = useSelector((state) => state.usedbookr_product)
+    const navigate = useNavigate();
 
     const owlOption = {
         items: 5,
@@ -48,7 +50,9 @@ const BestSeller = () => {
             },
         },
     };
+    const author = () => {
 
+    }
     const product_like = () => {
     }
     const product_add = () => {
@@ -56,6 +60,10 @@ const BestSeller = () => {
     }
     const product_remove = () => {
 
+    }
+    const author_name = () => {
+        console.log("ajith")
+        navigate('/authors')
     }
     return (
         <div className='py-lg-5 py-4 bestseller'>
@@ -69,7 +77,7 @@ const BestSeller = () => {
                         </span>
                         <div className='book-details p-3'>
                             <h1>Dual Ring </h1>
-                            <h5>By Lisa Jewall</h5>
+                            <h5 className='text-primary' onClick={()=>author_name()}>By Lisa Jewall</h5>
                             <div className='d-flex '>
                                 <div className='rate-details'>
                                     <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
@@ -97,7 +105,7 @@ const BestSeller = () => {
                         </span>
                         <div className='book-details p-3'>
                             <h1>Dual Ringa </h1>
-                            <h5>By Lisa Jewalla</h5>
+                            <h5 className='text-primary' onClick={()=>author_name()}>By Lisa Jewalla</h5>
                             <div className='d-flex '>
                                 <div className='rate-details'>
                                     <span className='new-rate'>₹ 299</span> <span className='ps-2 old-rate'>₹ 440</span><br />
